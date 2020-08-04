@@ -1,0 +1,192 @@
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+
+
+
+
+/*Calendario */
+.calendario{
+    margin: 100px;
+}
+
+
+.mes {
+  background: #9575cd;
+  text-align: center;
+  margin: 0px;
+  height: 100px;
+  padding-top: 17px;
+}
+ .icon{
+    float: right;
+ }
+
+
+.mes ul li {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+
+
+.semana {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #c7a4ff;
+}
+
+.semana li {
+  display: inline-block;
+  width: 13.4%;
+  color: white;
+  text-align: center;
+  border-right: 1px solid
+
+}
+
+#borrar{
+    border-right: 0px solid;
+}
+
+
+.dia {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.dia li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+/*Barra*/
+.barraIconos {
+    display:flex;
+    flex-direction: row;
+    background-color: #65499c;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  .header{
+      color: white;
+      font-size: 20px;
+      padding: 20px;
+      border-right: 1px solid;
+  }
+  
+  .barraIconos a {
+
+    text-align: center;
+    flex-grow: 1;
+    padding: 16px;
+    color: white;
+    font-size: 36px;
+  }
+
+  .barraIconos i{
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+  
+
+  .nombre{
+      font-size: 15px;
+      padding: 0;
+      margin: 0;
+  }
+
+  /*Login*/
+
+  /* Full-width input fields */
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  .enviarDatos {
+    background-color: #9575cd;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  
+  #contiene-usuario{
+      height: 50px;
+  }
+  /* Center the image and position the close button */
+  .usuario {
+    text-align: center;
+    margin: 24px;
+    width: 100%;
+  }
+ 
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .registro {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .contenido-registro {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
