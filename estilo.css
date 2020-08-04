@@ -106,13 +106,23 @@ ul {list-style-type: none;}
   /*Login*/
 
   /* Full-width input fields */
+.datos{
+  display: flex;
+  flex-direction: column;
+}
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+label{
+  color: white;
+  padding-top: 10px;
+  font-size: 17px;
+  text-align: center;
+}
+
+input {
+    width: 70%;
+    padding: 15px;
+    margin-left: 120px;
+    border: 2px solid #ccc;
     box-sizing: border-box;
   }
   
@@ -120,11 +130,12 @@ input[type=text], input[type=password] {
   .enviarDatos {
     background-color: #9575cd;
     color: white;
+    align-self: center;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+    border: 2px solid #ccc;
     cursor: pointer;
-    width: 100%;
+    width: 30%;
   }
   
   button:hover {
@@ -133,19 +144,17 @@ input[type=text], input[type=password] {
   
   
   #contiene-usuario{
-      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
   }
   /* Center the image and position the close button */
   .usuario {
-    text-align: center;
     margin: 24px;
-    width: 100%;
+    width: 10%;
   }
  
-  
-  .container {
-    padding: 16px;
-  }
   
   span.psw {
     float: right;
@@ -154,6 +163,7 @@ input[type=text], input[type=password] {
   
   /* The Modal (background) */
   .registro {
+
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -168,7 +178,7 @@ input[type=text], input[type=password] {
   
   /* Modal Content/Box */
   .contenido-registro {
-    background-color: #fefefe;
+    background-color: #c6a3ff;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
