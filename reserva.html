@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Academia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./estilo.css" type="text/css"/>
+</head>
+
+<body id="body">
+
+    <div class="barraIconos">
+        <div class="header">
+            <h1>Academia de conducir</h1>
+        </div>
+        <a href="#"><i class="fa fa-home"></i><p class="nombre">Inicio</p></a> 
+        <a onclick="
+                    document. body. style. background ='#fff'
+        ">
+        <i class="fa fa-pencil"></i><p class="nombre">Login</p></a> 
+        <a href="#"><i class="fa fa-edit"></i><p class="nombre">Reservar</p></a> 
+        <a href="#"><i class="fa fa-folder"></i><p class="nombre">Administración</p></a>
+     
+    </div>
+
+    <form class="ui form">
+        <div class="contenedorForm">
+            <div class="contenidoForm">
+                <h4 class="ui dividing header">Fecha:</h4>
+                <div class="two fields">
+                <div class="field">
+                    <label>Dia</label>
+                    <select class="ui fluid dropdown">
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+                <option value="Miercoles">Miercoles</option>
+                <option value="Jueves">Jueves</option>
+                <option value="Viernes">Viernes</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Mes</label>
+                    <select class="ui fluid dropdown">
+                    <option value="Enero">Enero</option>
+                    <option value="Febrero">Febrero</option>
+                    <option value="Marzo">Marzo</option>
+                    <option value="Abril">Abril</option>
+                    <option value="Mayo">Mayo</option>
+                    <option value="Junio">Junio</option>
+                    <option value="Julio">Julio</option>
+                    <option value="Agosto">Agosto</option>
+                    <option value="Setiembre">Setiembre</option>
+                    <option value="Octubre">Octubre</option>
+                    <option value="Noviembre">Noviembre</option>
+                    <option value="Diceimbre">Diceimbre</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Año</label>
+                    <input type="text" name="año" maxlength="4" placeholder="Año">
+                </div>
+                </div>
+                <h4 class="ui dividing header">Instructor</h4>
+                <div class="field">
+                    <label>Instructores disponibles:</label>
+                    <select class="ui fluid dropdown">
+                <option value="Jose">Jose</option>
+                <option value="Pedro">Pedro</option>
+                    </select>
+                </div>
+
+                <h4 class="ui dividing header">Hora</h4>
+                <input type="time" name="horario">
+
+
+                <button class="enviarDatos " type="submit">Realizar reserva:</button>
+            </div>
+        </div>
+    </form>
+
+    
+
+</body>
+
+</html>

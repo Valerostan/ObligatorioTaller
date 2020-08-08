@@ -3,7 +3,9 @@ ul {list-style-type: none;}
 
 
 
-
+#id01{
+  display:none;
+}
 /*Calendario */
 .calendario{
     margin: 100px;
@@ -125,17 +127,20 @@ input {
     border: 2px solid #ccc;
     box-sizing: border-box;
   }
-  
-  /* Set a style for all buttons */
+
   .enviarDatos {
     background-color: #9575cd;
     color: white;
     align-self: center;
     padding: 14px 20px;
-    margin: 8px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 40%;
     border: 2px solid #ccc;
     cursor: pointer;
-    width: 30%;
   }
   
   button:hover {
@@ -200,3 +205,15 @@ input {
     cursor: pointer;
   }
   
+
+  .contenedorForm{
+    margin: 100px;
+    border: 2px double  #65499c;
+    background: #ede7f6;
+
+  }
+
+  .contenidoForm{
+    margin: 30px;
+
+  }
