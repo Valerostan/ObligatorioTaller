@@ -141,6 +141,7 @@ input {
     border: 2px solid #ccc;
     box-sizing: border-box;
   }
+
   .enviarDatos {
     background-color: #9575cd;
     color: white;
@@ -160,6 +161,10 @@ input {
     cursor: pointer;
   }
 
+  .cursor{
+    cursor: pointer;
+  }
+
   button:hover {
     opacity: 0.8;
   }
@@ -170,22 +175,17 @@ input {
       align-items: center;
       justify-content: center;
       height: 100px;
+      margin: 10px;
   }
-  /* Center the image and position the close button */
+
   .usuario {
-    margin: 24px;
+    margin-top: 50px;
+    margin-bottom: 30px;
     width: 10%;
   }
  
   
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-  
-  /* The Modal (background) */
   .registro {
-
     position: fixed; 
     z-index: 1; 
     left: 0;
@@ -193,17 +193,14 @@ input {
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
     padding-top: 60px;
   }
   
   /* Modal Content/Box */
   .contenido-registro {
     background-color: #c6a3ff;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    margin: 5% auto 15% auto;
+    width: 70%; 
   }
   
   /* The Close Button (x) */
@@ -215,12 +212,20 @@ input {
     font-size: 35px;
     font-weight: bold;
   }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
+
+  #salir{
+   float: right;
+   margin-right: 10px;
+   margin-top: 10px;
+   color:white;
   }
+
+  a{
+    color:#65499c;
+  }
+  
+
+  /* Reserva */
   
 
   .contenedorForm{
