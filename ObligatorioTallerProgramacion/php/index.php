@@ -5,7 +5,7 @@
     <title>Academia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./estilo.css" type="text/css" />
+    <link rel="stylesheet" href="../css/estilo.css" type="text/css" />
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <a href="#reserva"><i class="fa fa-edit"></i>
                 <p class="nombre">Reservar</p>
             </a>
-            <a href="./altaAdmin.html"><i class="fa fa-folder"></i>
+            <a href="./altaAdmin.php"><i class="fa fa-folder"></i>
                 <p class="nombre">Administración</p>
             </a>
 
@@ -41,7 +41,7 @@
                 <input type="password" placeholder="Ingrese Contraseña" name="psw" required>
 
                 <button class="enviarDatos" type="submit">Ingresar</button>
-                <label id="lbl">No estoy registrado, <a href="./login.html">registrarme</a> </label>
+                <label id="lbl">No estoy registrado, <a href="./login.php">registrarme</a> </label>
 
             </div>
         </div>
