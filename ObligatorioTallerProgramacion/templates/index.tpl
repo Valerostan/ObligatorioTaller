@@ -1,3 +1,6 @@
+{* Smarty *}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html>
 
 <head>
@@ -9,43 +12,10 @@
 </head>
 
 <body>
-    <div id="contenido">
-        <div class="barraIconos">
-            <div class="header">
-                <h1>Academia de conducir</h1>
-            </div>
-            <a href="#"><i class="fa fa-home"></i>
-                <p class="nombre">Inicio</p>
-            </a>
-            <a class="cursor" onclick="document.getElementById('ingreso').style.display='block'" style="width:auto;"><i
-                    class="fa fa-pencil"></i>
-                <p class="nombre">Login</p>
-            </a>
-            <a href="#reserva"><i class="fa fa-edit"></i>
-                <p class="nombre">Reservar</p>
-            </a>
-            <a href="./altaAdmin.php"><i class="fa fa-folder"></i>
-                <p class="nombre">Administración</p>
-            </a>
+   {include "header.tpl"}
 
-        </div>
-
-        <div id="ingreso">
-            <div id="salir">
-                <i class="fa fa-close"></i>
-            </div>
-            <div class="datos">
-                <label for="mail"><b>Mail:</b></label>
-                <input type="email" placeholder="Ingrese mail" name="mail" required>
-                <label for="psw"><b>Contraseña:</b></label>
-                <input type="password" placeholder="Ingrese Contraseña" name="psw" required>
-
-                <button class="enviarDatos" type="submit">Ingresar</button>
-                <label id="lbl">No estoy registrado, <a href="./login.php">registrarme</a> </label>
-
-            </div>
-        </div>
-
+    
+    <section>
         <div>
             <label>Alumnos inscriptos:</label>
             <label>Usuarios con libreta:</label>
@@ -108,7 +78,9 @@
             </ul>
 
         </div>
+    </section>
 
+    <secton class="seccion-reserva">
         <form id="reserva" class=" ui form">
             <div class="contenedorForm">
                 <div class="contenidoForm">
@@ -186,13 +158,10 @@
             </div>
 
         </form>
-
-        <div class="administrador">
-
-        </div>
+    </secton>
 
 
-    </div>
+    
 
 </body>
 
