@@ -8,7 +8,7 @@
     <title>Academia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/estilo.css" type="text/css" />
+    <link rel="stylesheet" href="css/estilo.css" type="text/css" />
 </head>
 
 <body id="body">

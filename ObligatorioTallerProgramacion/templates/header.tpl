@@ -5,7 +5,7 @@
     <title>Academia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/estilo.css" type="text/css" />
+    <link rel="stylesheet" href="css/estilo.css" type="text/css" />
 </head>
 
 <body>
@@ -31,7 +31,7 @@
             {else}
             <a class="cursor" onclick="document.getElementById('ingreso').style.display='block'" style="width:auto;"><i
                     class="fa fa-pencil"></i>
-                <p class="nombre">Login</p> //Tenfria que mostrar el login.php 
+                <p class="nombre">Login</p>  
             </a>
             {/if}
 
