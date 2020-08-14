@@ -28,19 +28,19 @@
             <div class="datos">
 
                 <label for="nombre"><b>Nombre:</b></label>
-                <input type="text" placeholder="Ingrese nombre" name="nombre" required>
+                <input type="text" placeholder="Ingrese nombre" name="nombre" required />
 
                 <label for="apellido"><b>Apellido:</b></label>
-                <input type="text" placeholder="Ingrese apellido" name="apellido" required>
+                <input type="text" placeholder="Ingrese apellido" name="apellido" required />
 
                 <label for="cedula"><b>Cedula:</b></label>
-                <input type="number" placeholder="Ingrese cedula" name="cedula" required>
+                <input type="number" placeholder="Ingrese cedula" name="cedula" required />
 
                 <label for="fecha"><b>Fecha de nacimiento:</b></label>
-                <input type="date" placeholder="Ingrese fecha" name="fecha" required>
+                <input type="date" placeholder="Ingrese fecha" name="fecha" required />
 
                 <label for="fecha"><b>Fecha de vencimiento de licencia:</b></label>
-                <input type="date" placeholder="Ingrese fecha vencimiento" name="fecha" required>
+                <input type="date" placeholder="Ingrese fecha vencimiento" name="fecha" required />
 
                 <button class="enviarDatos " type="submit">Dar de alta</button>
             </div>

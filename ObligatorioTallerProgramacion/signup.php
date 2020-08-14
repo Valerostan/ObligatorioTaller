@@ -36,18 +36,11 @@ if (isset($_POST["contraseña"]) && !strlen($_POST["contraseña"])) {
 
 
 
-if (isset($_GET["error"])) {
-    switch ($_GET["error"]) {
-        case "1001":
-            $mensaje = "No tienen los permisos necesarios para acceder a esa página";
-            break;
-    }
-}
 
-$usuariosValidos = array(  //Por mientras que no se la base de datos
-    "root" => "63a9f0ea7bb98050796b649e85481845",
+$usuariosValidos = array( //Por mientras
+    "root@root" => "root",
     "admin" => "0192023a7bbd73250516f069df18b500",
-    "user" => "ee11cbb19052e40b07aac0ca060c23ee"
+    "user@user" => "user"
 );
 
 if (isset($_POST["action"]) && $_POST["action"] == "signup") {
@@ -58,6 +51,7 @@ if (isset($_POST["action"]) && $_POST["action"] == "signup") {
     $fecha = $_POST["fecha"];
     $direccion = $_POST["direccion"];
     $user = $_POST["mail"];
+
     
 
     setcookie("usuario_mail", $user, time() + 60 * 60 * 24); //para que es esto
@@ -65,7 +59,22 @@ if (isset($_POST["action"]) && $_POST["action"] == "signup") {
     if (isset($usuariosValidos[$user])) {
         $acceso = false;
         $mensaje = "Este usuario ya esta registrado";
+    }else{
+        $acceso = true;
+         $_SESSION["user"] = array(
+            "mail" => $user,
+            "acceso" => $acceso,
+            "esAdmin" => $user == "root@root" || $user == "admin" ? true : false
+       
+        );
+        
     }
+}
+
+if (isset($_POST["action"]) && $_POST["action"] == "logout") {
+    unset($_SESSION["user"]);
+    header("location: login.php");
+    die();
 }
 
 
@@ -84,6 +93,6 @@ $smarty->assign("action", $_SERVER["REQUEST_URI"]);
 $smarty->assign("user", $_SESSION["user"]);
 $smarty->assign("usuario_mail", $user);
 if (isset($mensaje)) { $smarty->assign("mensaje", $mensaje); }
-$smarty->assign("smensaje usted ya esta registrado así que diríjase a la página de inicio", "Bienvenido " . $_SESSION["user"]["nombre"]);
+$smarty->assign("smensaje", " usted ya esta registrado así que diríjase a la página de inicio o puede salir de la sesion con el siguiente boton, bienvenido " . $_SESSION["user"]["mail"]);
 
 $smarty->display("signup.tpl");

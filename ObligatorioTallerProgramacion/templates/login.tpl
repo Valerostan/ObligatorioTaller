@@ -12,13 +12,15 @@
 </head>
 	
     <body>
-        <h1>Login</h1>
+         {include "header.tpl"}
+         
+        <div id="ingreso">
         {if $mensaje}
             <div class="mensaje">{$mensaje}</div>
         {/if}
         {if !$user.acceso}
          
-        <div id="ingreso">
+
           <div id="salir">
               <i class="fa fa-close"></i>
           </div>
@@ -29,30 +31,28 @@
                     <label for="mail"><b>Mail:</b></label>
                     <input type="email" id ="mail" placeholder="Ingrese mail" name="mail" value="{$usuario_mail}" required />
                     <label for="psw"><b>Contraseña:</b></label>
-                    <input type="password" id="contraseña" placeholder="Ingrese Contraseña" name="psw" required />
-
+                    <input type="password" id="psw" placeholder="Ingrese Contraseña" name="psw" required />
+                    
                     <button class="enviarDatos" type="submit">Ingresar</button>
-                    <label id="lbl">No estoy registrado, <a href="./login.php">registrarme</a> </label>
-
+                    <input type="hidden" name="action" value="login" />
+                    <label id="lbl">No estoy registrado, <a href="./signup.php">registrarme</a> </label>
                 </div>
             
              </form>
-        </div>
         {else}
             <form action="{$action}" method="POST">
-                <p>{$smensaje}</p>
                 
-                <p>
-                    {if $user.esAdmin}
-                    <a href="altaAdmin.php">Panel de administración</a>
-                    {/if}
-                </p>
+                <label>{$smensaje}</label><br/>
+                <label>usted ya se encuentra ingresado, dirijase a la pagina de inicio
+                para ver todo o puede salir de sesion </label>
+                
 
                 <input type="hidden" name="action" value="logout" />
 
-                <button type="submit">Salir</button>
+                <button class="enviarDatos" type="submit">Salir</button>
             </form>
         {/if}
+         </div>
     </body>
 
 </html>

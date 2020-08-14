@@ -13,20 +13,6 @@
 
 <body id="body">
 
-    <div class="barraIconos">
-        <div class="header">
-            <h1>Academia de conducir</h1>
-        </div>
-        <a href="#"><i class="fa fa-home"></i><p class="nombre">Inicio</p></a> 
-        <a onclick="
-                    document. body. style. background ='#fff'
-        ">
-        <i class="fa fa-pencil"></i><p class="nombre">Login</p></a> 
-        <a href="#"><i class="fa fa-edit"></i><p class="nombre">Reservar</p></a> 
-        <a href="#"><i class="fa fa-folder"></i><p class="nombre">Administración</p></a>
-     
-    </div>
-
     <form class="ui form">
         <div class="contenedorForm">
             <div class="contenidoForm">

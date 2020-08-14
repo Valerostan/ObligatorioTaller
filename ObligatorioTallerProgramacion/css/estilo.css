@@ -2,13 +2,12 @@
 ul {list-style-type: none;}
 
 #ingreso{
-  display:none;
   position: absolute;
   align-self: center;
   border: 2px solid #65499c;
   height: 300px;
-  width: 650;
-  margin: 30px 800px 30px 400px;
+  width: 50%;
+  margin: 5% 50% 0% 10%;
   z-index: 1;
   background-color: #c6a3ff;
   padding-left: 20px;
@@ -250,4 +249,14 @@ input {
 
   }
 
+
+.columnas input.foco {
+    border: 1px solid #00c;
+    background: #fff;
+}
+
+input.error {
+    border: 1px solid #c00;
+    background: #ffcccc;
+}
 

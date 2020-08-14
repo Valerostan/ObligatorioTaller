@@ -9,8 +9,6 @@ header('Content-Type: text/html; charset=utf-8');
 
 
 $smarty->assign("user", $_SESSION['user']);
-
-
 $smarty->display("index.tpl");
 
 ?>
