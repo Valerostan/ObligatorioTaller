@@ -78,6 +78,25 @@
             </ul>
 
         </div>
+        
+        <div class="datosClases">
+            <div class="condiciones">
+                <h2>Condiciones para</h2>
+                <h2>obtener la libreta:</h2>
+                <ul>
+                    <li>Registrarse en nuestro sistema</li>
+                    <li>Ser aprobado como cliente por algun administrador</li>
+                    <li>Tomar 15 clases</li>
+                </ul>
+            </div>
+            
+            <div class="precio">
+                <h2>Costo por clase:</h2>
+                <h1>$800</h1>
+                <button class="reservarDatos" type="submit">Contratar servicio!</button>
+            </div>
+            
+        </div>
     </section>
 
         {include "footer.tpl"}
