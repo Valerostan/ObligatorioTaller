@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/estilo.css" type="text/css" />
+   <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
 </head>
 	
     <body>
@@ -28,10 +30,16 @@
              <form method="POST" action="{$action}" id="formLogin">
 
                 <div class="datos">
-                    <label for="mail"><b>Mail:</b></label>
-                    <input type="email" id ="mail" placeholder="Ingrese mail" name="mail" value="{$usuario_mail}" required />
-                    <label for="psw"><b>Contraseña:</b></label>
-                    <input type="password" id="psw" placeholder="Ingrese Contraseña" name="psw" required />
+                    <div class="rango">
+                        <label for="mail"><b>Mail:</b></label>
+                        <input type="email" id ="mail" placeholder="Ingrese mail" name="mail" value="{$usuario_mail}" required />
+                    </div>
+                    <br/>
+                    <div class="rango">
+                        <label for="psw"><b>Contraseña:</b></label>
+                        <input type="password" id="psw" placeholder="Ingrese Contraseña" name="psw" required />
+                    </div>
+                
                     
                     <button class="enviarDatos" type="submit">Ingresar</button>
                     <input type="hidden" name="action" value="login" />
@@ -42,7 +50,8 @@
         {else}
             <form action="{$action}" method="POST">
                 
-                <label>{$smensaje}</label><br/>
+                <h3>{$smensaje}</h3><br/>
+                <i class="fa fa-thumbs"></i>
                 <label>usted ya se encuentra ingresado, dirijase a la pagina de inicio
                 para ver todo o puede salir de sesion </label>
                 

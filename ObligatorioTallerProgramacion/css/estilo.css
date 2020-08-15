@@ -254,9 +254,32 @@ input {
     border: 1px solid #00c;
     background: #fff;
 }
+div.rango{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+div.labelInput{
+    display: flex;
+    flex-direction: column;
+}
+
+div.rango input{
+    width:50%;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+div.rango label{
+    width:50%;
+}
 input.error {
     border: 1px solid #c00;
     background: #ffcccc;
 }
+
+input.ok{
+    border:inherit
+}
+
 

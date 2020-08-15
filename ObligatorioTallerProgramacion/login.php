@@ -11,7 +11,7 @@ if (isset($_POST["mail"]) && !strlen($_POST["mail"])) {
 
 
 $usuariosValidos = array( //Por mientras
-    "root@root" => "root",
+    "root@root" => "rootroot",
     "admin" => "0192023a7bbd73250516f069df18b500",
     "user@user" => "user"
 );
