@@ -7,7 +7,7 @@ function inicializar() {
         }       
     });
 
-    $("div.rango input").focus(function () {
+    $("div.labelInput input").focus(function () {
         $(this).addClass("foco");
     }).blur(function () {
         $(this).removeClass("foco");
