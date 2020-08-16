@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 
@@ -6,42 +7,50 @@ session_start();
 require_once("configuracion.php");
 require_once("libs/class.Conexion.BD.php");
 
+$varAjax=$POST_['peticion'];
 $dia = $_POST['dia'];
 $mes = $_POST['mes'];
 $año = $_POST['año'];
 $hora = $_POST['hora'];
 $instructor = "1";
 $user = $_SESSION['idActivo'];
-$fecha = "";
+$fecha = $_POST['pluginCalendario'];
 
 //Creo el objeto para la conexion
 $conn = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
 if ($conn->conectar()) {
-    
+
+     $sql = "SELECT * FROM reservas WHERE instructor_id = :instructor";
+     
     //concateno la fecha
-    $fecha="{$año}-{$mes}-{$dia}";
+    $fecha = "{$año}-{$mes}-{$dia}";
     $fechaFormateada = DateTime::createFromFormat('Y-m-d', $fecha);
-    //creo la consulta
-    $sql = "INSERT INTO reservas (fecha, hora, instructor_id, usuario_id)";
-    $sql .= " VALUES (:fecha,:hora,:instructor_id,:usuario_id)";
 
     //creo los parametros para la consulta
     $parametros = array();
-    $parametros[0] = array("fecha", $fechaFormateada->format('Y-m-d'), "date");
-    $parametros[1] = array("hora", $hora, "int");
-    $parametros[2] = array("instructor_id", $instructor, "int");
-    $parametros[3] = array("usuario_id", $user, "int");
-
+    #$parametros[0] = array("fecha", $fechaFormateada->format('Y-m-d'), "date");
+    #$parametros[1] = array("hora", $hora, "int");
+    $parametros[0] = array("instructor_id", $instructor);
+    
+    
     //ejecuto la consulta
     if ($conn->consulta($sql, $parametros)) {
+        $respuesta['estado'] = "OK";
+        $respuesta['data'] = $conn->restantesRegistros();
         header("Location: reserva.php");
+
+
     } else {
-        echo "Error con Consulta " . $conn->ultimoError();
+        $respuesta['estado'] = "ERROR";
+        $respuesta['error'] = "Error al ejecutar consulta";
     }
 } else {
-    echo "Error de Conexión " . $conn->ultimoError();
+    $respuesta['estado'] = "ERROR";
+    $respuesta['error'] = "Error al ejecutar consulta";
 }
+
+echo json_encode($respuesta);
 ?>
 
 

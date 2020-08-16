@@ -25,14 +25,15 @@ function getCantReservas($usuario_id) {
     return $reservas;
 }
 
-function usuariosConReservas() {
+function usuariosConReservas($instructor_id) {
     $cn = getConnection();
 
-    $sql = "SELECT usuarios.nombre FROM reservas,usuarios where reservas.usuario_id==ususarios.usuario_id ";
+    $sql = "SELECT instructores.nombre FROM instructores,reservas where reservas.instructor_id==ususarios.usuario_id ";
     $result = $cn->query($sql);
     $reservas = $result->fetchAll(PDO::FETCH_ASSOC);
     return $reservas;
 }
+
 
 function getUsuario($usuario_id) {
     $cn = getConnection();
