@@ -8,7 +8,9 @@ function inicializar() {
     });
      $("#fecha").datetimepicker({
             dateFormat: 'd/mm/yy', 
-            maxDate: Date.parse("2001-01-01"), //cambiar que se actualice solo
+            timepicker: false,
+            format: 'Y-m-d',
+            maxDate: Date.parse("2001-01-01") //cambiar que se actualice solo
         });
     $("div.labelInput input").focus(function () {
         $(this).addClass("foco");

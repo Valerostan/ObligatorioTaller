@@ -1,48 +1,19 @@
-<html>
+<?php 
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Academia/Administraci</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="./css/estilo.css" type="text/css" />
-    </head>
+session_start();
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
-    <body>
+require_once('configuracion.php');
+require_once("libs/class.Conexion.BD.php");
 
-        <div class="registro">
-            <form class="contenido-registro">
-                <span class="alta">Alta Instructor</span>
+//Seteo el charset de la página como utf-8
+header('Content-Type: text/html; charset=utf-8');
 
-                <div id="salir">
-                    <i class="fa fa-close"></i>
-                </div>
+//Creo el objeto para la conexion
+$conn = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
-                <div id="contiene-usuario">
-                    <img class="usuario"src="./img/avatar.png"/>
-                </div>
+$smarty->assign("acceso", $_SESSION['acceso']);
+$smarty->assign("esAdmin", $_SESSION['esAdmin']);
 
-                <div class="datos">
-
-                    <label for="nombre"><b>Nombre:</b></label>
-                    <input type="text" placeholder="Ingrese nombre" name="nombre" required>
-
-                    <label for="apellido"><b>Apellido:</b></label>
-                    <input type="text" placeholder="Ingrese apellido" name="apellido" required>
-
-                    <label for="cedula"><b>Cedula:</b></label>
-                    <input type="number" placeholder="Ingrese cedula" name="cedula" required>
-
-                    <label for="fecha"><b>Fecha de nacimiento:</b></label>
-                    <input type="date" placeholder="Ingrese fecha" name="fecha" required>
-
-                    <label for="fecha"><b>Fecha de vencimiento de licencia:</b></label>
-                    <input type="date" placeholder="Ingrese fecha vencimiento" name="fecha" required>
-
-                    <button class="enviarDatos " type="submit">Dar de alta</button>
-                </div>
-            </form>
-        </div>
-    </body>
-</html>
-
+$smarty->display("altaAdmin.tpl");
+?>

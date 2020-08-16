@@ -19,20 +19,19 @@
 
 <body>
     
-    <div class="registro">
+    <div >
     {include "header.tpl"}
-    {if $mensaje}
-            <div class="mensaje">{$mensaje}</div>
-        {/if}
-    {if !$user.acceso}
+
+    {if !$acceso}
     
-        <form class="contenido-registro" method="POST" action="{$action}" id="frmLogin" >
+        <form class="contenido-registro" method="POST" action="signupUsuario.php" id="frmLogin" >
           <div id="salir">
             <i  class="fa fa-close"></i>
           </div>
-            <div id="contiene-usuario">
-                <img class="usuario"src="./img/avatar.png"/>
-            </div>
+            <h2 class="ui center aligned icon header">
+                            <i class="circular user icon"></i>
+                            Sign up
+            </h2>
       
           <div class="datos">
             
@@ -58,7 +57,7 @@
               
             <div class="labelInput">
                 <label for="fecha"><b>Fecha de nacimiento:</b></label>
-                <input id="fecha" name="fecha" placeholder="Ingrese fecha" name="fecha" required/>
+                <input id="fecha" name="fecha" placeholder="Ingrese fecha" required/>
             </div>
               
             <div class="labelInput">
@@ -74,17 +73,12 @@
             <input type="hidden" name="action" value="signup" />
             <button class="enviarDatos " type="submit">Registarme</button>
           </div>
+              
         </form>
       </div>
-      {else}
-         <form class="contenido-registro" action="{$action}" method="POST">
-                <label>{$smensaje}</label>
-
-                <input type="hidden" name="action" value="logout" />
-
-                <button class="enviarDatos " type="submit">Cerrar sesion</button>
-         </form>
       {/if}
+      
+      {include "footer.tpl"}
 
 </body>
 

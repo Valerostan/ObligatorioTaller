@@ -1,32 +1,36 @@
 * {box-sizing: border-box;}
 ul {list-style-type: none;}
 
+body{
+    /*background-image: url("../img/fondo.jpg");*/
+
+}
 #ingreso{
-  position: absolute;
-  align-self: center;
-  border: 2px solid #65499c;
-  height: 300px;
-  width: 50%;
-  margin: 5% 50% 0% 10%;
-  z-index: 1;
-  background-color: #c6a3ff;
-  padding-left: 20px;
+    position: absolute;
+    align-self: center;
+    border: 2px solid #65499c;
+    height: 300px;
+    width: 50%;
+    margin: 5% 50% 0% 10%;
+    z-index: 1;
+    background-color: #c6a3ff;
+    padding-left: 20px;
 }
 
 #lbl{
-  font-size: 20px;
-  text-align: left;
-  display: inline;
+    font-size: 20px;
+    text-align: left;
+    display: inline;
 }
 
 .alta{ /*Averiguar por que no anda margin*/
-  text-align: right;
-  color: white;
-  margin-top: 20px;
-  padding: 280px;
-  font-size: 20px;
-  font-weight: bold;
-  width: 70px;
+    text-align: right;
+    color: white;
+    margin-top: 20px;
+    padding: 280px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 70px;
 }
 
 /*Calendario */
@@ -37,9 +41,9 @@ ul {list-style-type: none;}
 .datosClases{
     background: #ddc1e6;
     border-radius: 42px 42px 42px 42px;
-   -moz-border-radius: 42px 42px 42px 42px;
-   -webkit-border-radius: 42px 42px 42px 42px;
-   -webkit-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+    -webkit-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
     width: 45%;
@@ -88,37 +92,37 @@ div.datosClases ul {
 }
 
 .mes {
-  background: #9575cd;
-  text-align: center;
-  margin: 0px;
-  height: 100px;
-  padding-top: 17px;
+    background: #9575cd;
+    text-align: center;
+    margin: 0px;
+    height: 100px;
+    padding-top: 17px;
 }
- .icon{
+.icon{
     float: right;
- }
+}
 
 
 .mes ul li {
-  color: white;
-  font-size: 20px;
-  letter-spacing: 4px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 4px;
 }
 
 
 
 .semana {
-  margin: 0;
-  padding: 10px 0;
-  background-color: #c7a4ff;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #c7a4ff;
 }
 
 .semana li {
-  display: inline-block;
-  width: 13.4%;
-  color: white;
-  text-align: center;
-  border-right: 1px solid
+    display: inline-block;
+    width: 13.4%;
+    color: white;
+    text-align: center;
+    border-right: 1px solid
 
 }
 
@@ -128,19 +132,19 @@ div.datosClases ul {
 
 
 .dia {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
 }
 
 .dia li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
 }
 
 /*Barra*/
@@ -150,67 +154,67 @@ div.datosClases ul {
     background-color: #65499c;
     margin-bottom: 0px;
     padding-bottom: 0px;
-  }
+}
 
-  .header{
-      color: white;
-      font-size: 20px;
-      padding: 20px;
-      border-right: 1px solid;
-  }
-  
-  footer div.barraIconos{
-      color: white;
-      font-size: 14px;
-      padding: 20px;
-      display:flex;
-      flex-direction: row;
-      flex-grow: 20;
-  }
-  
+.header{
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-right: 1px solid;
+}
 
-  .barraIconos a {
+footer div.barraIconos{
+    color: white;
+    font-size: 14px;
+    padding: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-grow: 20;
+}
+
+
+.barraIconos a {
 
     text-align: center;
     flex-grow: 1;
     padding: 16px;
     color: white;
     font-size: 36px;
-  }
+}
 
-  .barraIconos i{
+.barraIconos i{
     padding-top: 0px;
     margin-top: 0px;
-  }
-  
+}
 
-  .nombre{
-      font-size: 15px;
-      padding: 0;
-      margin: 0;
-  }
-  
-  #telFooter{
-      padding-left: 783px;
-  }
 
-  #direcFooter{
-      padding-left: 40px;
-  }
+.nombre{
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
 
-  /*Login*/
+#telFooter{
+    padding-left: 783px;
+}
 
-  /* Full-width input fields */
+#direcFooter{
+    padding-left: 40px;
+}
+
+/*Login*/
+
+/* Full-width input fields */
 .datos{
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 label{
-  color: white;
-  padding-top: 10px;
-  font-size: 17px;
-  text-align: center;
+    color: white;
+    padding-top: 10px;
+    font-size: 17px;
+    text-align: center;
 }
 
 input {
@@ -219,9 +223,9 @@ input {
     margin-left: 120px;
     border: 2px solid #ccc;
     box-sizing: border-box;
-  }
+}
 
-  .enviarDatos {
+.enviarDatos {
     background-color: #9575cd;
     color: white;
     align-self: center;
@@ -234,98 +238,110 @@ input {
     width: 40%;
     border: 2px solid #ccc;
     cursor: pointer;
-  }
-  
-  #ingreso{
-    cursor: pointer;
-  }
+}
 
-  .cursor{
+#ingreso{
     cursor: pointer;
-  }
+}
 
-  button:hover {
+.cursor{
+    cursor: pointer;
+}
+
+button:hover {
     opacity: 0.8;
-  }
-  
-  
-  #contiene-usuario{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100px;
-      margin: 10px;
-  }
+}
 
-  .usuario {
+
+#contiene-usuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin: 10px;
+}
+
+.usuario {
     margin-top: 50px;
     margin-bottom: 30px;
     width: 10%;
-  }
- 
-  
-  .registro {
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    padding-top: 60px;
-  }
-  
-  /* Modal Content/Box */
-  .contenido-registro {
+}
+
+
+.registro {
+    display:flex;
+    flex-direction: row;
+    
+}
+
+.contiene-titulo{
+    display:flex;
+    flex-direction: row;
+}
+
+/* Modal Content/Box */
+.contenido-registro {
+    display:flex;
+    flex-direction: column;
+    
     background-color: #c6a3ff;
-    margin: 5% auto 15% auto;
+    margin: 5% auto 15% 5%;
     width: 70%; 
-  }
-  
-  /* The Close Button (x) */
-  .close {
+    padding-top: 10px;
+    
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
+    box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
+}
+
+/* The Close Button (x) */
+.close {
     position: absolute;
     right: 25px;
     top: 0;
     color: #000;
     font-size: 35px;
     font-weight: bold;
-  }
+}
 
-  #salir{
-   float: right;
-   margin-right: 10px;
-   margin-top: 10px;
-   color:white;
-  }
+#salir{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    color:white;
+}
 
-  a{
+a{
     color:#65499c;
-  }
-  
+}
 
-  /* Reserva */
-  
 
-  .contenedorForm{
+/* Reserva */
+
+
+.contenedorForm{
     margin: 100px;
     border: 2px double  #65499c;
     background: #ede7f6;
 
-  }
+}
 
-  .contenidoForm{
+.contenidoForm{
     margin: 30px;
 
-  }
+}
 
-  .mensaje{
-      background-color: transparent;
-      border: 0px;
-      align-self: center;
-      
-  }
-  
+.mensaje{
+    background-color: transparent;
+    border: 0px;
+    align-self: center;
+
+}
+
 .columnas input.foco {
     border: 1px solid #00c;
     background: #fff;
@@ -363,4 +379,29 @@ input.ok{
     border: 0px;
     color: white;
     cursor: pointer;
+}
+
+.botones{
+    
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    text-align: center;
+    height: 400px;
+}
+
+.botones a{
+    background-color: lightblue;
+    font-size: 36px;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
+    box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
+    color:white;
 }
