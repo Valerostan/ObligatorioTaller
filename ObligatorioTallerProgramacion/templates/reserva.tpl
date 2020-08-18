@@ -24,8 +24,12 @@
                         <h4 class="ui dividing header" >Instructor</h4>
                         <label>Instructores disponibles:</label>
                         <select class="ui fluid dropdown" name="instructor" id="instructor">
-                            <option value="1">Jose</option>
-                            <option value="1">Pedro</option>
+                            {if !empty($instructores)}
+                                {foreach from=$instructores item=instructor}
+                                    <option value="{$instructor.instructor_id}"> {$instructor.nombre}</option>
+
+                                {/foreach}
+                            {/if}
                         </select>
                     </div>
                     <div id="agregarFecha"><h4 class="ui dividing header">

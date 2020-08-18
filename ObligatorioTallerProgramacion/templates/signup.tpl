@@ -36,6 +36,8 @@
           <div class="datos">
             
               <div class="labelInput">
+                  {if $errorMail}<p>Mail en uso escriba otra vez</p> {/if}
+                  {if $errorEdad}<p>Usted es menor de edad, debe ser mayor para ingresar</p> {/if}
                 <label for="mail"><b>Mail:</b></label>
                 <input type="email" id="mail" name="mail" placeholder="Ingrese mail" name="mail" value="{$usuario_mail}" required/>
               </div>

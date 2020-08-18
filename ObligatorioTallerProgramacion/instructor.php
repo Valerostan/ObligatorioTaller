@@ -5,6 +5,8 @@ require_once("configuracion.php");
 # cargar datos
 session_start();
 
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
 $acceso = isset($_SESSION["user"]);
 
     if (isset($_SESSION["user"])){
@@ -17,13 +19,35 @@ $acceso = isset($_SESSION["user"]);
         "esAdmin" => false
     );
     }
+$errorCi=false;
+if(isset($_GET["ciErr"])){
+    $errorCi=true;
+}
 
+$errorEdad=false;
+if(isset($_GET["edadErr"])){
+    $errorEdad=true;
+}
+
+$errorVencido=false;
+if(isset($_GET["vencidoErr"])){
+    $errorVencido=true;
+}
+
+$bien=false;
+if(isset($_GET["bien"])){
+    $bien=true;
+}
+   
 
 $smarty->assign("action", $_SERVER["REQUEST_URI"]);
 $smarty->assign("user", $_SESSION["user"]);
-if (isset($mensaje)) {
-    $smarty->assign("mensaje", $mensaje);
-}
+$smarty->assign("errorVencido", $errorVencido);
+$smarty->assign("errorEdad", $errorEdad);
+$smarty->assign("errorCi", $errorCi);
+$smarty->assign("bien", $bien);
+$smarty->assign("acceso", $_SESSION['acceso']);
+$smarty->assign("esAdmin", $_SESSION['esAdmin']);
 
-# mostrar el template
-$smarty->display('esAdmin.tpl');
+
+$smarty->display('altaAdmin.tpl');

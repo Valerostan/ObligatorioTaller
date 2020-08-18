@@ -7,8 +7,6 @@ require_once("libs/class.Conexion.BD.php");
 
 try {
     $id  = (int) $_POST['userId'];
-    
-    echo $_POST['userId'];
 
     $conn = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
@@ -23,6 +21,7 @@ try {
       
         //ejecuto la consulta
         if ($conn->consulta($sql, $parametros)) {
+            $response['status'] = 'ok';
             return true;
         } else {
             echo "Error con Consulta " . $conn->ultimoError();

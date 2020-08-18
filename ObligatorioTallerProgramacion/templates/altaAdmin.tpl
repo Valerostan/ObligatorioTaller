@@ -36,6 +36,11 @@
 
                     <div class="datos">
 
+                        {if $errorCi}<p>Ci en uso</p> {/if}
+                        {if $errorEdad}<p>Usted es menor de edad, debe ser mayor para ingresar</p> {/if}
+                        {if $errorVencido}<p>Libreta vencida</p> {/if}
+                        {if $bien}<p>Instructor ingresado con exito!</p> {/if}
+
                         <label for="nombre"><b>Nombre:</b></label>
                         <input type="text" placeholder="Ingrese nombre" name="nombre" required />
 
@@ -61,7 +66,7 @@
                     <a href="./actualizarLibreta.php"><i class="fa fa-pencil"></i>
                         <p class="nombre">Confirmar Libreta</p>
                     </a>
-                    <a href="./listadoClases.php"><i class="fa fa-pencil"></i>
+                    <a href="./cargarInstructores.php"><i class="fa fa-pencil"></i>
                         <p class="nombre">Listado de clases por instructor</p>
                     </a>
                 </div>

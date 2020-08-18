@@ -13,22 +13,27 @@
     </head>
 
     <body>
-
         {include "header.tpl"}
-        {if $acceso and  $esAdmin}
-            {if !empty($usuarios)}
-                {foreach from=$usuarios item=usuario}
-                    <div class="changeClientBtn" data-id="{$usuario.usuario_id}">
-                        Cambiar usuario {$usuario.nombre}
+        <h3 class="titlulo" >Listado de alumnos en la fecha {$fecha} por el instructor {$instructor}</h3>
+        <div class="ui celled list">
+            {if !empty($alumnos)}
+                {foreach from=$alumnos item=alumno}
+
+
+                    <div class="item">
+                        <div class="content">
+                            <div class="header">{$alumno.nombre}</div>
+                            con direccion {$alumno.direccion}
+                        </div>
                     </div>
 
                 {/foreach}
             {else}
-                <h1>No hay reservas</h1>
+                <h1>No hay alumnos en esa fecha con ese instructor</h1>
             {/if}
-        {/if}
+
+        </div>
 
         {include "footer.tpl"}
-
     </body>
 </html>

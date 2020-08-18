@@ -12,11 +12,11 @@ if ($conn->conectar()) {
     if ($conn->consulta($sql, $parametros)) {
         $instructores = $conn->restantesRegistros(); //Le asigno a fila el resultado de la consulta
         
+        echo $instructores; 
         if (count($instructores) == 0) {
              $mensaje="No hay instructores";
         }
         
-        echo $instructores;
         
         session_start();
         
@@ -26,13 +26,11 @@ if ($conn->conectar()) {
         $smarty->assign("acceso", $_SESSION['acceso']);
         $smarty->assign("esAdmin", $_SESSION['esAdmin']);
 
-        $smarty->display('reserva.tpl');
+        $smarty->display('listadoClases.tpl');
     } else {
         echo "Error con Consulta " . $conn->ultimoError();
     }
 } else {
     echo "Error de Conexión " . $conn->ultimoError();
 }
-
-?>
 

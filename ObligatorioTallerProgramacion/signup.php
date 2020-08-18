@@ -19,6 +19,24 @@ $acceso = isset($_SESSION["user"]);
     }
 $user = isset($_POST["mail"]) ? $_POST["mail"] : $_COOKIE["usuario_mail"];
 
+if(isset($_GET["claveErr"])){
+    $errorClave=true;
+}
+
+$errorMail=false;
+if(isset($_GET["emailErr"])){
+    $errorMail=true;
+}
+
+$errorEdad=false;
+if(isset($_GET["edadErr"])){
+    $errorEdad=true;
+}
+
+# setear variables
+$smarty->assign("errorClave", $errorClave);
+$smarty->assign("errorMail", $errorMail);
+$smarty->assign("errorEdad", $errorEdad);
 
 $smarty->assign("action", $_SERVER["REQUEST_URI"]);
 $smarty->assign("user", $_SESSION["user"]);

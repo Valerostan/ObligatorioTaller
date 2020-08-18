@@ -17,14 +17,22 @@ if (!isset($_SESSION["user"])) {
         "esAdmin" => false
     );
 }
+$errorMail=false;
+if(isset($_GET["emailErr"])){
+    $errorMail=true;
+}
+
+$errorPassword=false;
+if(isset($_GET["passwordErr"])){
+    $errorPassword=true;
+}
 
 $smarty->assign("action", $_SERVER["REQUEST_URI"]);
 $smarty->assign("user", $_SESSION["user"]);
 $smarty->assign("usuario_mail", $user);
-if (isset($mensaje)) {
-    $smarty->assign("mensaje", $mensaje);
-}
-$smarty->assign("smensaje", "Bienvenido " . $_SESSION["user"]["mail"]);
+$smarty->assign("errorMail", $errorMail);
+$smarty->assign("errorPassword", $errorPassword);
+
 
 $smarty->display("login.tpl");
 

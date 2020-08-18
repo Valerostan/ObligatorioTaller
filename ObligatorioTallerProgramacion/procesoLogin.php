@@ -24,6 +24,10 @@ if($conn->conectar()){
     //ejecuto la consulta
     if($conn->consulta($sql, $parametros)){
         $fila = $conn->siguienteRegistro(); //Le asigno a fila el resultado de la consulta
+        if (count($fila) == 0) {
+             $_SESSION['acceso'] = false;
+             header('location:login.php?emailErr=1');
+        }
         if($password==$fila["password"]){ //Como la consulta retorno algo (porque entro al mail) verifico que la ocnstraseña sea correcta
             $_SESSION['acceso'] = true;
             $_SESSION['mail'] = $mail;
@@ -37,9 +41,9 @@ if($conn->conectar()){
             header("Location: index.php");
         }
         else{
+            
             $_SESSION['acceso'] = false;
-            $_SESSION['mensaje'] = "Usuario y/o contaseña erroneos";
-            header("Location: login.php");
+             header('location:login.php?passwordErr=1');
         }
     }
     else{
