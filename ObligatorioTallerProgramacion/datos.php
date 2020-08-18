@@ -108,7 +108,3 @@ else{
     echo "Error de Conexión " . $conn->ultimoError();
 }
 }
-
-
-
-

@@ -14,6 +14,7 @@ $conn = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
 $smarty->assign("acceso", $_SESSION['acceso']);
 $smarty->assign("esAdmin", $_SESSION['esAdmin']);
+$smarty->assign("esCliente", $_SESSION['esCliente']);
 
 $smarty->display("index.tpl");
 ?>

@@ -94,7 +94,7 @@
                                 <div class="precio">
                                     <h2>Costo por clase:</h2>
                                     <h1>$800</h1>
-                                    {if $acceso}
+                                    {if $acceso && $esCliente}
                                         <button class="reservarDatos" type="submit">Contratar servicio!</button>
                                     {/if}
                                 </div>

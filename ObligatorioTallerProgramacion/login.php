@@ -7,11 +7,6 @@ require_once('configuracion.php');
 $acceso = isset($_SESSION["user"]);
 
 
-
-
-
-
-
 $user = isset($_POST["mail"]) ? $_POST["mail"] : $_COOKIE["usuario_mail"];
 
 // Si el usuario nunca accedió, lo definimos como anónimo

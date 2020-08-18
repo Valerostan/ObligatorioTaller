@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Usuario/Documents/Ort/Tercer%20semestre/Taller%20Programación/Obligatorio/ObligatorioTaller/ObligatorioTallerProgramacion/templates/altaAdmin.tpl</file>
             <file>file:/C:/Users/Usuario/Documents/Ort/Tercer%20semestre/Taller%20Programación/Obligatorio/ObligatorioTaller/ObligatorioTallerProgramacion/css/estilo.css</file>
             <file>file:/C:/Users/Usuario/Documents/Ort/Tercer%20semestre/Taller%20Programación/Obligatorio/ObligatorioTaller/ObligatorioTallerProgramacion/templates/footer.tpl</file>
@@ -14,6 +15,14 @@
             <file>file:/C:/Users/Usuario/Documents/Ort/Tercer%20semestre/Taller%20Programación/Obligatorio/ObligatorioTaller/ObligatorioTallerProgramacion/templates/index.tpl</file>
             <file>file:/C:/Users/Usuario/Documents/Ort/Tercer%20semestre/Taller%20Programación/Obligatorio/ObligatorioTaller/ObligatorioTallerProgramacion/templates/login.tpl</file>
             <file>file:/C:/Users/Usuario/Documents/Ort/Tercer%20semestre/Taller%20Programación/Obligatorio/ObligatorioTaller/ObligatorioTallerProgramacion/js/cambiarCliente.js</file>
+=======
+            <file>file:/C:/Users/PC/Desktop/Repo%20Taller/ObligatorioTaller/ObligatorioTallerProgramacion/signupUsuario.php</file>
+            <file>file:/C:/Users/PC/Desktop/Repo%20Taller/ObligatorioTaller/ObligatorioTallerProgramacion/signup.php</file>
+            <file>file:/C:/Users/PC/Desktop/Repo%20Taller/ObligatorioTaller/ObligatorioTallerProgramacion/reserva.php</file>
+            <file>file:/C:/Users/PC/Desktop/Repo%20Taller/ObligatorioTaller/ObligatorioTallerProgramacion/templates/header.tpl</file>
+            <file>file:/C:/Users/PC/Desktop/Repo%20Taller/ObligatorioTaller/ObligatorioTallerProgramacion/index.php</file>
+            <file>file:/C:/Users/PC/Desktop/Repo%20Taller/ObligatorioTaller/ObligatorioTallerProgramacion/login.php</file>
+>>>>>>> 6f37273d95d63857a30cbaa958015062a93498e4
         </group>
     </open-files>
 </project-private>
