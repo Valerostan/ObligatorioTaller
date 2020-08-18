@@ -16,6 +16,11 @@
                 <div class="header">
                     <h1>Academia de conducir</h1>
                 </div>
+                {if $acceso}
+                <div class="usuarioLogueado">
+                    <p>Usuario Loggeado: {$usuarioLoggeado}</p>
+                </div>
+                {/if}
                 <a href="./index.php"><i class="fa fa-home"></i>
                     <p class="nombre">Inicio</p>
                 </a>
