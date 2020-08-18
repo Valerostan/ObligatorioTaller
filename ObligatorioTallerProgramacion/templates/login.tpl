@@ -51,6 +51,7 @@
                             </form>
                         {/if}
                     </div>
+                   {include "footer.tpl"}
                 </body>
 
      </html>

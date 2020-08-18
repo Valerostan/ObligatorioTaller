@@ -1,26 +1,29 @@
 <?php
 
-require_once 'datos.php';
+require_once('configuracion.php');
+require_once("libs/class.Conexion.BD.php");
 
 
 $conn = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
 if ($conn->conectar()) {
-
-
-    $sql = "INSERT INTO instructores(nombre ,apellido ,ci,fecha_nacimiento ,vencimiento) VALUES(:nombre, :apellido, :ci, :fecha_nacimiento,:vencimiento)";
-
+    $sql = "SELECT usuarios.* FROM reservas,usuarios where reservas.usuario_id=usuarios.usuario_id ";
     $parametros = array();
-    $parametros[0] = array("nombre", $nombre, "string");
-    $parametros[1] = array("apellido", $apellido, "string");
-    $parametros[3] = array("fecha_nacimiento", $fecha_nacimiento, "string");
-    $parametros[4] = array("ci", $ci, "string");
-    $parametros[5] = array("vencimiento", $vencimiento, "string");
-
     if ($conn->consulta($sql, $parametros)) {
-        $fila = $conn->siguienteRegistro(); //Le asigno a fila el resultado de la consulta
+        $usuarios = $conn->restantesRegistros(); //Le asigno a fila el resultado de la consulta
+        if (count($usuarios) == 0) {
+            return false;
+        }
+        
+        session_start();
+        
+        $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+        
+        $smarty->assign("usuarios", $usuarios);
+        $smarty->assign("acceso", $_SESSION['acceso']);
+        $smarty->assign("esAdmin", $_SESSION['esAdmin']);
 
-        header("Location: index.php");
+        $smarty->display('pre_vista_usuarios.tpl');
     } else {
         echo "Error con Consulta " . $conn->ultimoError();
     }

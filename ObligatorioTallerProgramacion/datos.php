@@ -32,7 +32,9 @@ function usuariosConReservas() {
         $parametros = array();
     if($conn->consulta($sql, $parametros)){
         $fila = $conn->siguienteRegistro(); //Le asigno a fila el resultado de la consulta
-        return $fila;
+        if(count($fila)==0){
+        return false;
+}
         
     }else{
         echo "Error con Consulta " . $conn->ultimoError();

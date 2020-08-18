@@ -6,15 +6,13 @@ body{
 
 }
 #ingreso{
-    position: absolute;
     align-self: center;
     border: 2px solid #65499c;
     height: 300px;
     width: 50%;
-    margin: 5% 50% 0% 10%;
-    z-index: 1;
+    margin: 10% 50% 10% 20%;
     background-color: #c6a3ff;
-    padding-left: 20px;
+    padding: 20px;
 }
 
 #lbl{
