@@ -22,7 +22,7 @@
                 <form  class="contenido-registro" method="POST" action="listadoClases.php" id="frmLogin" >
                     <h2 class="ui center aligned icon header">
                         <i class="circular user icon"></i>
-                        Vea lista de clientes por fechae instructor
+                        Vea lista de clientes por fecha de instructor
                     </h2>
 
                     <div class="datos">

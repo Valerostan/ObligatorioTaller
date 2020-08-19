@@ -1,6 +1,5 @@
 <?php
 
-require_once 'datos.php';
 
 $nombre = $_POST["nombre"];
 $email = $_POST["mail"];

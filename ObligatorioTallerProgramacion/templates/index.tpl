@@ -21,30 +21,10 @@
 
 
                         <section class="inicioT">
-                            <form id="inscriptos">
-                                <div id="textoInscriptos">
-                                    <label>Alumnos inscriptos:</label> {$cantUsuarios[0].cantUsuarios}
-                                </div>
-                                <div id="textoLibreta">
-                                    <label>Usuarios con libreta:</label> {$cantLibretas[0].cantLibretas}
-                                </div>
-                            </form>
-
-                            <div id="calendarioYrefes">
-                                <div id="my-calendar" data-navigator="false"></div>
-
-                                <div id="referencias"> 
-                                    <ul>
-                                        <li>Referencias:</li>
-                                        <div class="referenciaB"> <p class="colorReferenciaR"></p><li>100% clases reservadas</li></div>
-                                        <div  class="referenciaB"><p class="colorReferenciaY" ></p><li>Mas del 50% clases reservadas</li></div>
-                                        <div  class="referenciaB"><p class="colorReferenciaG"></p><li>Menos 50% clases reservadas</li></div>
-                                        <ul>
-
-                                            </div>
-                                            </div>
-
-                                            <form method="POST" action="procesoReserva.php" id="formLogin">
+                            
+                            <div class="datosInicio">
+                                
+                            <form method="POST" action="procesoReserva.php" id="formLogin">
                                                 <div class="datosClases">
                                                     <div class="condiciones">
                                                         <h2>Condiciones para</h2>
@@ -66,6 +46,38 @@
 
                                                 </div>
                                             </form>
+                            <form id="inscriptos">
+                                <div id="textoInscriptos">
+                                    <label>Alumnos inscriptos:</label> {$cantUsuarios[0].cantUsuarios}
+                                </div>
+                                <div id="textoLibreta">
+                                    <label>Usuarios con libreta:</label> {$cantLibretas[0].cantLibretas}
+                                </div>
+                            </form>
+                                
+                                </div>
+                            <div id="calendarioYrefes">
+                                <div id="my-calendar" data-navigator="false"></div>
+                                
+                                
+                                <div class="contieneCalendario">
+                                <div id="referencias"> 
+                                    <ul>
+                                        <li>Referencias:</li>
+                                        <div class="referenciaB"> <p class="colorReferenciaR"></p><li>100% clases reservadas</li></div>
+                                        <div  class="referenciaB"><p class="colorReferenciaY" ></p><li>Mas del 50% clases reservadas</li></div>
+                                        <div  class="referenciaB"><p class="colorReferenciaG"></p><li>Menos 50% clases reservadas</li></div>
+                                        <ul>
+
+
+
+                                            </div>
+                                 <button type="submit" id="refrescar">Refresh Calendario</button>
+                                </div>
+                                            </div>
+                                           
+                                           
+                                            
                                             </section>
 
                                             {include "footer.tpl"}

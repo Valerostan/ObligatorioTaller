@@ -1,16 +1,20 @@
-$(document).ready(paintCalendar);
+$(document).ready(inicializar);
 
-function paintCalendar() {
+$('#refrescar').on('click', paintCalendar);
+
+function inicializar(){
     var element = document.getElementById("my-calendar");
     jsCalendar.new(element);
+    paintCalendar();
+}
 
+function paintCalendar() {
     $.ajax({
         url: "calendario.php",
         data: {accion: "buscar"},
         dataType: "json"
     }).done(function (data) {
         if (data.estado === 'OK') {
-            console.log('hola');
             //console.log(date.getMonth());
             var reservas = data.data;
             var instructores = data.data1;
@@ -25,28 +29,10 @@ function paintCalendar() {
                 $(this).css("color", "black");
             })
         }
-    })
-            /*$(".auto-jsCalendar jsCalendar").each(function (index) {
-             $(this).children("td").each(function (index2) {
-             console.log(idex2.html());
-             if (data.data.contains(index2.html()) && data.data2=== data.data2*data.data1) {
-             $("td").css("background-color", "red");
-             } else if (data.data.contains(index2.html()) && (($resp.count*100/data.data1*15)>= 50)) {
-             $("td").css("background-color", "yellow");
-             } else {
-             $("td").css("background-color", "green");
-             }
-             
-             })
-             
-             })
-             }
-             
-             }
-             )*/.fail(function (data, err) {
-                console.log(data);
-                console.log(err);
-            });
+    }).fail(function (data, err) {
+        console.log(data);
+        console.log(err);
+    });
 
 }
 

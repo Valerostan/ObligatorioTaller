@@ -2,9 +2,9 @@
 ul {list-style-type: none;}
 
 body{
-    /*background-image: url("../img/fondo.jpg");*/
     background-color: #F4DECB;
 }
+
 #ingreso{
     align-self: center;
     border: 2px solid #65499c;
@@ -21,7 +21,29 @@ body{
     display: inline;
 }
 
-.alta{ /*Averiguar por que no anda margin*/
+.datosInicio{
+    display:flex;
+    align-items: center;
+    
+}
+
+#refrescar{
+    background-color: red;
+    color: white;
+    align-self: center;
+    padding: 14px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid red;
+    cursor: pointer;
+    font-weight: bold;
+    font: status-bar;
+}
+
+.alta{ 
     text-align: right;
     color: white;
     margin-top: 20px;
@@ -37,14 +59,15 @@ body{
 }
 
 #my-calendar{
-    margin-left: 500px;
+    margin-left: 15%;
     margin-top: 5px;
 }
 
 #calendarioYrefes{
-    display: in-line-block;
-    display: flex;
+        display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 #referencias{
@@ -57,8 +80,6 @@ body{
     box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
     margin-top: 200px;
     margin-right: 50px;
-    width: 25%;
-    height: 20%;
     color: white;
     float: right;
     margin-top: 100px;
@@ -101,9 +122,10 @@ body{
     -webkit-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
-    width: 45%;
+    width: 80%;
     height: 200px;
-    margin-left: 360px;
+    margin-left: 30%;
+    margin-top: 30px;
     margin-bottom: 30px;
     display: flex;
 }
@@ -117,7 +139,6 @@ body{
     margin-top: 2px;
 }
 .inicioT{
-    height:100%
 }
 
 .precio{
@@ -223,9 +244,10 @@ div.datosClases ul {
     box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
     width: 25%;
     height: 100px;
-    margin-left: 20px;
-    margin-top: 30px;
+    margin-left: 25%;
 }
+
+
 
 #textoInscriptos{
     color: white;
@@ -262,9 +284,13 @@ footer div.barraIconos{
     flex-direction: row;
     flex-grow: 20;
     margin-bottom: 0px;
-    position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.contieneCalendario{
+    display:flex;
+    flex-direction: column;
 }
 
 

@@ -19,12 +19,6 @@ function inicializar() {
             maxDate: Date.parse("2001-01-01") //cambiar que se actualice solo
         });
 
-  //  $("div.labelInput input").focus(function () {
-  //      $(this).addClass("foco");
-   // }).blur(function () {
-   //     $(this).removeClass("foco");
-   //     validarForm();
-   // });
 
 }
 

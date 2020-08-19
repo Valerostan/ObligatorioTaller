@@ -17,7 +17,7 @@
         
         <div class="containerL">
             {if $esAdmin} 
-        <h3 class="titlulo" >Listado de alumnos en la fecha {$fecha} por el instructor {$instructor}</h3>
+        <h3 class="titlulo" >Listado de alumnos en la fecha {$fecha} por el instructor seleccionado</h3>
         <div class="ui celled list">
             {if !empty($alumnos)}
                 {foreach from=$alumnos item=alumno}
