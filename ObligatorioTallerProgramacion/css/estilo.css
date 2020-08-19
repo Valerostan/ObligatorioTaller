@@ -8,7 +8,7 @@ body{
 #ingreso{
     align-self: center;
     border: 2px solid #65499c;
-    height: 300px;
+    height: auto;
     width: 50%;
     margin: 10% 50% 10% 20%;
     background-color: #c6a3ff;
@@ -188,7 +188,7 @@ div.datosClases ul {
 
 
 
-.header{
+.headerA{
     color: white;
     font-size: 20px;
     padding: 20px;
@@ -450,6 +450,10 @@ input.ok{
     margin: 1% 20%;
 }
 
+.error{
+    color:firebrick;
+}
+
 div.containerL{
     height:80%;
     padding:5%;
@@ -486,4 +490,12 @@ aprobarLibreta{
 .usuarioLogueado{
         display: flex;
     align-items: center;
+}
+
+div.header{
+        color: black;
+}
+
+p{
+    text-align:center;
 }

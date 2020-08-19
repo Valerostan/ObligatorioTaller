@@ -23,8 +23,8 @@
                             <form method="POST" action="procesoLogin.php" id="formLogin">
 
                                 <div class="datos">
-                                    {if $errorMail}<p>Contraseña incorrecta/usuario incorrecto</p> {/if}
-                                    {if $errorPassword}<p>Contraseña incorrecta/usuario incorrecto</p> {/if}
+                                    {if $errorMail}<p class="error">Contraseña incorrecta/usuario incorrecto</p> {/if}
+                                    {if $errorPassword}<p class="error">Contraseña incorrecta/usuario incorrecto</p> {/if}
                                     <div class="labelInput">
                                         <label for="mail"><b>Mail:</b></label>
                                         <input type="email" id ="mail" placeholder="Ingrese mail" name="mail" value="{$usuario_mail}" required />

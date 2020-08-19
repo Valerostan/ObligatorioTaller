@@ -22,10 +22,10 @@
             <form method="POST" action="procesoReserva.php" id="formReserva" class="ui form" name="formReserva">
                 <div class="contenedorForm">
                     <div class="contenidoForm">
-                        {if $errorInstru}<p>No hay instructores disponibles</p> {/if}
-                        {if $errorFecha}<p>Fecha no disponible</p> {/if}
-                        {if $bien}<p>Reserva realizada con exito</p> {/if}
-                        {if $errConsulta}<p>error en la consulta</p> {/if}
+                        {if $errorInstru}<p class="error">No hay instructores disponibles</p> {/if}
+                        {if $errorFecha}<p class="error">Fecha no disponible</p> {/if}
+                        {if $bien}<p class="error">Reserva realizada con exito</p> {/if}
+                        {if $errConsulta}<p class="error">error en la consulta</p> {/if}
                         <div class="field">
                             <h4 class="ui dividing header" >Instructor</h4>
                             <label>Instructores disponibles:</label>

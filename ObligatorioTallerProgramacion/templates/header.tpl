@@ -3,7 +3,7 @@
 
         <header>
             <div class="barraIconos">
-                <div class="header">
+                <div class="headerA">
                     <h1>Academia de conducir</h1>
                 </div>
                 {if $acceso}

@@ -31,10 +31,10 @@
 
                         <div class="datos">
 
-                            {if $errorCi}<p>Ci en uso</p> {/if}
-                            {if $errorEdad}<p>Usted es menor de edad, debe ser mayor para ingresar</p> {/if}
-                            {if $errorVencido}<p>Libreta vencida</p> {/if}
-                            {if $bien}<p>Instructor ingresado con exito!</p> {/if}
+                            {if $errorCi}<p class="error">Ci en uso</p> {/if}
+                            {if $errorEdad}<p class="error">Usted es menor de edad, debe ser mayor para ingresar</p> {/if}
+                            {if $errorVencido}<p class="error">Libreta vencida</p> {/if}
+                            {if $bien}<p class="error">Instructor ingresado con exito!</p> {/if}
 
                             <label for="nombre"><b>Nombre:</b></label>
                             <input type="text" placeholder="Ingrese nombre" name="nombre" required />
