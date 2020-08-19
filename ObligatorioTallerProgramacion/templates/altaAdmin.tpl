@@ -58,7 +58,7 @@
                     <a href="./aprobarCliente.php"><i class="fa fa-pencil"></i>
                         <p class="nombre">Aprobar Cliente</p>
                     </a>
-                    <a href="./actualizarLibreta.php"><i class="fa fa-pencil"></i>
+                    <a href="./usuariosLibreta.php"><i class="fa fa-pencil"></i>
                         <p class="nombre">Confirmar Libreta</p>
                     </a>
                     <a href="./listadoClases.php"><i class="fa fa-pencil"></i>

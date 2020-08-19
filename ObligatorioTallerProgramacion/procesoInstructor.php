@@ -32,7 +32,7 @@ if ($ciEnUso) {
 
             if ($conn->consulta($sql, $parametros)) {
                 $fila = $conn->siguienteRegistro(); //Le asigno a fila el resultado de la consulta
-
+                alert("Instructor ingresado con éxito");
                  header("Location: index.php");
 
             } else {

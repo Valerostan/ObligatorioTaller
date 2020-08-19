@@ -3,18 +3,16 @@ ul {list-style-type: none;}
 
 body{
     /*background-image: url("../img/fondo.jpg");*/
-
+    background-color: #F4DECB;
 }
 #ingreso{
-    position: absolute;
     align-self: center;
     border: 2px solid #65499c;
     height: 300px;
     width: 50%;
-    margin: 5% 50% 0% 10%;
-    z-index: 1;
+    margin: 10% 50% 10% 20%;
     background-color: #c6a3ff;
-    padding-left: 20px;
+    padding: 20px;
 }
 
 #lbl{
@@ -151,10 +149,42 @@ div.datosClases ul {
 .barraIconos {
     display:flex;
     flex-direction: row;
-    background-color: #65499c;
+    background-color: #94618E;
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
+
+#inscriptos{
+    background: #ddc1e6;
+    border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+    -webkit-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    width: 25%;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+#textoInscriptos{
+    color: white;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 18px;
+    display: inline-block;
+}
+
+#textoLibreta{
+    color: white;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 18px;
+    display: inline-block;
+}
+
+
 
 .header{
     color: white;
@@ -162,6 +192,8 @@ div.datosClases ul {
     padding: 20px;
     border-right: 1px solid;
 }
+
+
 
 footer div.barraIconos{
     color: white;
@@ -404,4 +436,8 @@ input.ok{
     -moz-box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
     box-shadow: 20px 10px 43px 5px rgba(0,0,0,0.75);
     color:white;
+}
+
+.aprobar{
+    margin-left: 50px;
 }

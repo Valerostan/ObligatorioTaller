@@ -6,9 +6,14 @@
     <head>
         <meta charset="UTF-8">
             <title>Academia</title>
+            <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+             <script type="text/javascript" src="js/jsCalendar.js"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <link rel="stylesheet" href="css/estilo.css" type="text/css" />
+                <link rel="stylesheet" type="text/css" href="css/jsCalendar.css">
+            
+                
                 </head>
 
                 <body>
@@ -16,12 +21,19 @@
 
 
                     <section>
-                        <div>
-                            <label>Alumnos inscriptos:</label>
-                            <label>Usuarios con libreta:</label>
-                        </div>
+                        <form id="inscriptos">
+                            <div id="textoInscriptos">
+                                <label>Alumnos inscriptos:</label> {$cantUsuarios[0].cantUsuarios}
+                            </div>
+                            <div id="textoLibreta">
+                                <label>Usuarios con libreta:</label> {$cantLibretas[0].cantLibretas}
+                            </div>
+                        </form>
 
-                        <div class="calendario">
+                        <div id="my-calendar"></div>
+                        {*<div class="auto-jsCalendar"></div>*}    
+                            
+                        {*<div class="calendario">
                             <div class="mes">
                                 <ul>
                                     <li>
@@ -77,7 +89,7 @@
                                 <li>31</li>
                             </ul>
 
-                        </div>
+                        </div>*}
 
                         <form method="POST" action="procesoReserva.php" id="formLogin">
                             <div class="datosClases">
@@ -109,5 +121,5 @@
 
 
                 </body>
-
+                    <script type="text/javascript" src="js/index.js"></script>
                 </html>
