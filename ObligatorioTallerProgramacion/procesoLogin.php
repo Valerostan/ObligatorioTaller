@@ -28,7 +28,7 @@ if($conn->conectar()){
              $_SESSION['acceso'] = false;
              header('location:login.php?emailErr=1');
         }
-        if($password==$fila["password"]){ //Como la consulta retorno algo (porque entro al mail) verifico que la ocnstraseña sea correcta
+        if( md5($password)==$fila["password"]){ //Como la consulta retorno algo (porque entro al mail) verifico que la ocnstraseña sea correcta
             $_SESSION['acceso'] = true;
             $_SESSION['mail'] = $mail;
             $_SESSION['idActivo'] = $fila["usuario_id"];

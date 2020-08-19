@@ -52,12 +52,12 @@ if ((date("Y") - $año) > 18) {
 if ($esMenor) {
     $_SESSION['acceso'] = false;
     header('location:signup.php?edadErr=1');
-    ;
+    
 } else {
     if ($mailEnUso) {
         $_SESSION['acceso'] = false;
         header('location:signup.php?emailErr=1');
-        ;
+        
     } else {
         if (strlen($contraseña) < 5) {
             $_SESSION['acceso'] = false;
@@ -75,7 +75,7 @@ if ($esMenor) {
                 $parametros[3] = array("fecha_nacimiento", $fecha, "string");
                 $parametros[4] = array("ci", $ci, "string");
                 $parametros[5] = array("direccion", $direccion, "string");
-                $parametros[6] = array("clave", $contraseña, "string");
+                $parametros[6] = array("clave",  md5($contraseña), "string");
 
                 if ($conn->consulta($sql, $parametros)) {
                     $fila = $conn->siguienteRegistro(); //Le asigno a fila el resultado de la consulta
