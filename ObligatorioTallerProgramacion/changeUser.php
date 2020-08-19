@@ -22,7 +22,6 @@ try {
         //ejecuto la consulta
         if ($conn->consulta($sql, $parametros)) {
             $response['status'] = 'ok';
-            return true;
         } else {
             echo "Error con Consulta " . $conn->ultimoError();
         }
@@ -30,7 +29,9 @@ try {
         echo "Error de Conexión " . $conn->ultimoError();
     }
 } catch (Exception $ex) {
-    
+    $response = $ex->getMessage();
 }
+echo json_encode($response);
+
 
 

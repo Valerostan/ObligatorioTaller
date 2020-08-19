@@ -41,6 +41,8 @@ $smarty->assign("errorEdad", $errorEdad);
 $smarty->assign("action", $_SERVER["REQUEST_URI"]);
 $smarty->assign("user", $_SESSION["user"]);
 $smarty->assign("esCliente", $_SESSION['esCliente']);
+$smarty->assign("usuarioLoggeado", $_SESSION['mail']); //Le asigno al usuarioLoggeado el valor que tiene la sesion en mail
+
 
 $smarty->assign("usuario_mail", $user);
 if (isset($mensaje)) {

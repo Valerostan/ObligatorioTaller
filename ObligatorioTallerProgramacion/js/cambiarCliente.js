@@ -1,9 +1,14 @@
+var idC=0;
+var cant=0;
 $(document).ready(function () {
     $('.changeClientBtn').on('click',function(){
-        $id=$(this).attr('data-id');
-        updateUsuarioCliente($id);
+        idC=$(this).attr('data-id');
+        updateUsuarioCliente(idC);
         
     });
+     $('.changeClientBtn').each(function(){
+         cant++;
+     })
 })
 
 
@@ -19,13 +24,15 @@ function updateUsuarioCliente(userId) {
 }
 ;
 function createClientSucces(response,obj,mensaje) {
-    console.log(response);
-    console.log(obj);
-    console.log(mensaje);
-    console.log(response.status);
     if (response.status == 'ok') {
         alert('Usuario cambiado a cliente');
-        $('#cliente').remove();
+        cant--;
+        $("#"+idC).remove();
+        
+        if(cant===0){
+            $('.containerL').html('<h1>No hay usuarios para cambiar a clientes</h1>');
+        }
+        
     } else {
         alert("errorenElsucces");
     }

@@ -34,6 +34,8 @@ $smarty->assign("usuario_mail", $user);
 $smarty->assign("errorMail", $errorMail);
 $smarty->assign("errorPassword", $errorPassword);
 $smarty->assign("esCliente", $_SESSION['esCliente']);
+$smarty->assign("usuarioLoggeado", $_SESSION['mail']); //Le asigno al usuarioLoggeado el valor que tiene la sesion en mail
+
 
 
 

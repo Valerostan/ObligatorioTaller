@@ -3,7 +3,7 @@ ul {list-style-type: none;}
 
 body{
     /*background-image: url("../img/fondo.jpg");*/
-
+    background-color: #F4DECB;
 }
 #ingreso{
     align-self: center;
@@ -53,12 +53,14 @@ body{
 
 .condiciones{
     color: white;
-    width: 50%;
 }
 
 .condiciones h2{
     text-align: center;
     margin-top: 2px;
+}
+.inicioT{
+    height:100%
 }
 
 .precio{
@@ -149,10 +151,42 @@ div.datosClases ul {
 .barraIconos {
     display:flex;
     flex-direction: row;
-    background-color: #65499c;
+    background-color: #94618E;
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
+
+#inscriptos{
+    background: #ddc1e6;
+    border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+    -webkit-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    width: 25%;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+#textoInscriptos{
+    color: white;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 18px;
+    display: inline-block;
+}
+
+#textoLibreta{
+    color: white;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 18px;
+    display: inline-block;
+}
+
+
 
 .header{
     color: white;
@@ -160,6 +194,8 @@ div.datosClases ul {
     padding: 20px;
     border-right: 1px solid;
 }
+
+
 
 footer div.barraIconos{
     color: white;
@@ -438,4 +474,16 @@ width: 70%;
 .titulo{
     font-size: 30px;
     text-align: center;
+}
+.aprobar{
+    margin-left: 50px;
+}
+
+aprobarLibreta{
+    cursor:pointer;
+}
+
+.usuarioLogueado{
+        display: flex;
+    align-items: center;
 }

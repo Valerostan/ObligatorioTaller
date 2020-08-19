@@ -48,6 +48,8 @@ if ($conn->conectar()) {
         $smarty->assign("bien", $bien);
         $smarty->assign("errConsulta", $errConsulta);
         $smarty->assign("esCliente", $_SESSION['esCliente']);
+        $smarty->assign("usuarioLoggeado", $_SESSION['mail']); //Le asigno al usuarioLoggeado el valor que tiene la sesion en mail
+
 
 
 

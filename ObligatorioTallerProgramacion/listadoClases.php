@@ -32,6 +32,8 @@ if ($conn->conectar()) {
         $smarty->assign("fecha", $date);
         $smarty->assign("instructor", $inst);
         $smarty->assign("esCliente", $_SESSION['esCliente']);
+        $smarty->assign("usuarioLoggeado", $_SESSION['mail']); //Le asigno al usuarioLoggeado el valor que tiene la sesion en mail
+
 
         
 

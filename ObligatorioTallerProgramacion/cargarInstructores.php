@@ -25,6 +25,8 @@ if ($conn->conectar()) {
         $smarty->assign("acceso", $_SESSION['acceso']);
         $smarty->assign("esAdmin", $_SESSION['esAdmin']);
         $smarty->assign("esCliente", $_SESSION['esCliente']);
+        $smarty->assign("usuarioLoggeado", $_SESSION['mail']); //Le asigno al usuarioLoggeado el valor que tiene la sesion en mail
+
 
 
         $smarty->display('listadoClases.tpl');
