@@ -48,6 +48,8 @@ $smarty->assign("errorCi", $errorCi);
 $smarty->assign("bien", $bien);
 $smarty->assign("acceso", $_SESSION['acceso']);
 $smarty->assign("esAdmin", $_SESSION['esAdmin']);
+$smarty->assign("esCliente", $_SESSION['esCliente']);
+
 
 
 $smarty->display('altaAdmin.tpl');

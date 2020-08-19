@@ -7,13 +7,11 @@ require_once("libs/class.Conexion.BD.php");
 $conn = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
 if ($conn->conectar()) {
-    $sql = "SELECT usuarios.* FROM reservas,usuarios where reservas.usuario_id=usuarios.usuario_id ";
+    $sql = "SELECT distinct usuarios.* FROM usuarios where usuario_tipo_id=2 ";
     $parametros = array();
     if ($conn->consulta($sql, $parametros)) {
         $usuarios = $conn->restantesRegistros(); //Le asigno a fila el resultado de la consulta
-        if (count($usuarios) == 0) {
-            return false;
-        }
+
         
         session_start();
         
@@ -22,6 +20,8 @@ if ($conn->conectar()) {
         $smarty->assign("usuarios", $usuarios);
         $smarty->assign("acceso", $_SESSION['acceso']);
         $smarty->assign("esAdmin", $_SESSION['esAdmin']);
+        $smarty->assign("esCliente", $_SESSION['esCliente']);
+
 
         $smarty->display('pre_vista_usuarios.tpl');
     } else {

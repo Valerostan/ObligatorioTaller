@@ -12,7 +12,6 @@ if ($conn->conectar()) {
     if ($conn->consulta($sql, $parametros)) {
         $instructores = $conn->restantesRegistros(); //Le asigno a fila el resultado de la consulta
         
-        echo $instructores; 
         if (count($instructores) == 0) {
              $mensaje="No hay instructores";
         }
@@ -25,6 +24,8 @@ if ($conn->conectar()) {
         $smarty->assign("instructores", $instructores);
         $smarty->assign("acceso", $_SESSION['acceso']);
         $smarty->assign("esAdmin", $_SESSION['esAdmin']);
+        $smarty->assign("esCliente", $_SESSION['esCliente']);
+
 
         $smarty->display('listadoClases.tpl');
     } else {

@@ -28,7 +28,7 @@ if ($conn->conectar()) {
     echo "Error de Conexión " . $conn->ultimoError();
 }
 
-list($año,$mes,$dia)= explode('-', $fecha);
+list($año, $mes, $dia) = explode('-', $fecha);
 
 if ((date("Y") - $año) > 18) {
     $esMenor = false;
@@ -36,17 +36,16 @@ if ((date("Y") - $año) > 18) {
     if ((date("Y") - $año) == 18) {
         if ((date("m") - $mes) > 0) {
             $esMenor = false;
-        }else{
+        } else {
             if ((date("m") - $mes) == 0) {
-                $esMenor=(date("d") - $dia) < 0;
-            }else{
-             $esMenor = true;
+                $esMenor = (date("d") - $dia) < 0;
+            } else {
+                $esMenor = true;
             }
         }
-    }else{
-         $esMenor = true;
+    } else {
+        $esMenor = true;
     }
-   
 }
 
 
@@ -88,8 +87,15 @@ if ($esMenor) {
                     $_SESSION['idActivo'] = $fila["usuario_id"];
                     if ($fila['usuario_tipo_id'] == 1) {
                         $_SESSION['esAdmin'] = true;
+                        $_SESSION['esCliente'] = false;
                     } else {
-                        $_SESSION['esAdmin'] = false;
+                        if ($fila['usuario_tipo_id'] == 3) {
+                            $_SESSION['esCliente'] = true;
+                        }else{
+                            $_SESSION['esCliente'] = false;
+                            $_SESSION['esAdmin'] = false;
+                        }
+                        
                     }
                     setcookie("mail", $fila["mail"], time() + (60 * 60 * 24));
                     header("Location: index.php");

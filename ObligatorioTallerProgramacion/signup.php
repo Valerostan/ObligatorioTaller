@@ -40,6 +40,8 @@ $smarty->assign("errorEdad", $errorEdad);
 
 $smarty->assign("action", $_SERVER["REQUEST_URI"]);
 $smarty->assign("user", $_SESSION["user"]);
+$smarty->assign("esCliente", $_SESSION['esCliente']);
+
 $smarty->assign("usuario_mail", $user);
 if (isset($mensaje)) {
     $smarty->assign("mensaje", $mensaje);

@@ -31,6 +31,8 @@ if ($conn->conectar()) {
         $smarty->assign("esAdmin", $_SESSION['esAdmin']);
         $smarty->assign("fecha", $date);
         $smarty->assign("instructor", $inst);
+        $smarty->assign("esCliente", $_SESSION['esCliente']);
+
         
 
         $smarty->display("alumnosInstructor.tpl");

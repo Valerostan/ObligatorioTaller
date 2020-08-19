@@ -17,48 +17,74 @@
     </head>
 
     <body id="body">
-        <form method="POST" action="procesoReserva.php" id="formReserva" class="ui form" name="formReserva">
-            <div class="contenedorForm">
-                <div class="contenidoForm">
-                    <div class="field">
-                        <h4 class="ui dividing header" >Instructor</h4>
-                        <label>Instructores disponibles:</label>
-                        <select class="ui fluid dropdown" name="instructor" id="instructor">
-                            {if !empty($instructores)}
-                                {foreach from=$instructores item=instructor}
-                                    <option value="{$instructor.instructor_id}"> {$instructor.nombre}</option>
+        {include "header.tpl"}
+        {if $acceso and  ($esAdmin or $esCliente) }
+            <form method="POST" action="procesoReserva.php" id="formReserva" class="ui form" name="formReserva">
+                <div class="contenedorForm">
+                    <div class="contenidoForm">
+                        {if $errorInstru}<p>No hay instructores disponibles</p> {/if}
+                        {if $errorFecha}<p>Fecha no disponible</p> {/if}
+                        {if $bien}<p>Reserva realizada con exito</p> {/if}
+                        {if $errConsulta}<p>error en la consulta</p> {/if}
+                        <div class="field">
+                            <h4 class="ui dividing header" >Instructor</h4>
+                            <label>Instructores disponibles:</label>
+                            <select class="ui fluid dropdown" name="instructor" id="instructor">
+                                {if !empty($instructores)}
+                                    {foreach from=$instructores item=instructor}
+                                        <option value="{$instructor.instructor_id}"> {$instructor.nombre}</option>
 
-                                {/foreach}
-                            {/if}
-                        </select>
+                                    {/foreach}
+                                {/if}
+                            </select>
+                        </div>
+                        <div id="agregarFecha"><h4 class="ui dividing header">
+                                Fecha:</h4><input type="text" id="pluginCalendario" name="pluginCalendario"/></div>
+                        <h4 class="ui dividing header">Hora</h4>
+                        <div class="field">
+                            <select class="ui fluid dropdown" name="hora" id='hora'>
+                                <option value="7">7:00</option>
+                                <option value="8">8:00</option>
+                                <option value="9">9:00</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00</option>
+                                <option value="13">13:00</option>
+                                <option value="14">14:00</option>
+                                <option value="15">15:00</option>
+                                <option value="16">16:00</option>
+                                <option value="17">17:00</option>
+                                <option value="18">18:00</option>
+                                <option value="19">19:00</option>
+                                <option value="20">20:00</option>
+                                <option value="21">21:00</option>
+                            </select>
+                        </div>
+                        <label id='ingresoReserva' name='ingresoReserva'> </label>
+                        <button class="enviarDatos" type="submit" id='btnReserva'>Realizar reserva</button>
                     </div>
-                    <div id="agregarFecha"><h4 class="ui dividing header">
-                            Fecha:</h4><input type="text" id="pluginCalendario" name="pluginCalendario"/></div>
-                    <h4 class="ui dividing header">Hora</h4>
-                    <div class="field">
-                        <select class="ui fluid dropdown" name="hora" id='hora'>
-                            <option value="7">7:00</option>
-                            <option value="8">8:00</option>
-                            <option value="9">9:00</option>
-                            <option value="10">10:00</option>
-                            <option value="11">11:00</option>
-                            <option value="12">12:00</option>
-                            <option value="13">13:00</option>
-                            <option value="14">14:00</option>
-                            <option value="15">15:00</option>
-                            <option value="16">16:00</option>
-                            <option value="17">17:00</option>
-                            <option value="18">18:00</option>
-                            <option value="19">19:00</option>
-                            <option value="20">20:00</option>
-                            <option value="21">21:00</option>
-                        </select>
+                </div>
+            </form>
+        {else}
+            
+            <div class="containerL">
+                <div class="ui message">
+                    {if $acceso }
+                    <div class="header">
+                        Ya lo aprobaran como cliente para poder reservar, por favor aguarde
                     </div>
-                    <label id='ingresoReserva' name='ingresoReserva'> </label>
-                    <button class="enviarDatos" type="submit" id='btnReserva'>Realizar reserva</button>
+                    {else}
+                        <div class="header">
+                        Usted no tiene permisos para ingresar a esta seccion 
+                    </div>
+                        {/if}
+                    <p>Por favor dirijase al inicio o ingrese con un usuario que le permita dar acceso</p>
                 </div>
             </div>
-        </form>
+             
+        {/if}
+        
+        {include "footer.tpl"}
 
 
 

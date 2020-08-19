@@ -14,6 +14,9 @@
 
     <body>
         {include "header.tpl"}
+        
+        <div class="containerL">
+            {if $esAdmin} 
         <h3 class="titlulo" >Listado de alumnos en la fecha {$fecha} por el instructor {$instructor}</h3>
         <div class="ui celled list">
             {if !empty($alumnos)}
@@ -32,6 +35,17 @@
                 <h1>No hay alumnos en esa fecha con ese instructor</h1>
             {/if}
 
+        </div>
+            {else}
+                <div class="containerL">
+                <div class="ui message">
+                    <div class="header">
+                        Usted no tiene permisos para ingresar a esta seccion 
+                    </div>
+                    <p>Por favor dirijase al inicio o ingrese con un usuario que le permita dar acceso</p>
+                </div>
+                     </div>
+            {/if}
         </div>
 
         {include "footer.tpl"}

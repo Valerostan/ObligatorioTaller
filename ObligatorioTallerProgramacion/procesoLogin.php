@@ -34,8 +34,15 @@ if($conn->conectar()){
             $_SESSION['idActivo'] = $fila["usuario_id"];
             if($fila['usuario_tipo_id'] == 1){
                 $_SESSION['esAdmin'] = true;
+                $_SESSION['esCliente'] = false;
             }else{
+                if($fila['usuario_tipo_id'] == 3){
+                $_SESSION['esCliente'] = true;
+                }else{
+                     $_SESSION['esCliente'] = false;
                 $_SESSION['esAdmin'] = false;
+                }
+               
             }
             setcookie("mail",$mail, time()+(60*60*24));
             header("Location: index.php");

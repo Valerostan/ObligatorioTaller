@@ -13,67 +13,75 @@
             <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
             <script type="text/javascript" src="js/altaInstructor.js"></script>
 
-            <script type='text/javascript' src='js/jquery.datetimepicker.full.js'></script>
     </head>
 
     <body>
         {include "header.tpl"}
+            {if $esAdmin} 
+                <div class="registro">
+                    <form action="procesoInstructor.php" id="formInstructor"  method="POST" class="contenido-registro">
+                        <div class="contiene-titulo">
+                            <h2 class="ui center aligned icon header">
+                                <i class="circular users icon"></i>
+                                Alta instructor
+                            </h2>
 
-        {if $esAdmin} 
-            <div class="registro">
-                <form action="procesoInstructor.php" id="formInstructor"  method="POST" class="contenido-registro">
-                    <div class="contiene-titulo">
-                        <h2 class="ui center aligned icon header">
-                            <i class="circular users icon"></i>
-                            Alta instructor
-                        </h2>
-
-                        <div id="salir">
-                            <i class="fa fa-close"></i>
+                            <div id="salir">
+                                <i class="fa fa-close"></i>
+                            </div>
                         </div>
+
+
+                        <div class="datos">
+
+                            {if $errorCi}<p>Ci en uso</p> {/if}
+                            {if $errorEdad}<p>Usted es menor de edad, debe ser mayor para ingresar</p> {/if}
+                            {if $errorVencido}<p>Libreta vencida</p> {/if}
+                            {if $bien}<p>Instructor ingresado con exito!</p> {/if}
+
+                            <label for="nombre"><b>Nombre:</b></label>
+                            <input type="text" placeholder="Ingrese nombre" name="nombre" required />
+
+                            <label for="apellido"><b>Apellido:</b></label>
+                            <input type="text" placeholder="Ingrese apellido" name="apellido" required />
+
+                            <label for="cedula"><b>Cedula:</b></label>
+                            <input type="number" placeholder="Ingrese cedula" name="cedula" required />
+
+                            <label for="fecha"><b>Fecha de nacimiento:</b></label>
+                            <input type="date" placeholder="Ingrese fecha" name="fecha1" name="fecha1" required />
+
+                            <label for="fecha"><b>Fecha de vencimiento de licencia:</b></label>
+                            <input type="date" placeholder="Ingrese fecha vencimiento" id="fecha2" name="fecha2" required />
+
+                            <button class="enviarDatos " type="submit">Dar de alta</button>
+                        </div>
+                    </form>
+                    <div class="botones">
+                        <a href="./aprobarCliente.php"><i class="fa fa-pencil"></i>
+                            <p class="nombre">Aprobar Cliente</p>
+                        </a>
+                        <a href="./actualizarLibreta.php"><i class="fa fa-pencil"></i>
+                            <p class="nombre">Confirmar Libreta</p>
+                        </a>
+                        <a href="./cargarInstructores.php"><i class="fa fa-pencil"></i>
+                            <p class="nombre">Listado de clases por instructor</p>
+                        </a>
                     </div>
-
-
-                    <div class="datos">
-
-                        {if $errorCi}<p>Ci en uso</p> {/if}
-                        {if $errorEdad}<p>Usted es menor de edad, debe ser mayor para ingresar</p> {/if}
-                        {if $errorVencido}<p>Libreta vencida</p> {/if}
-                        {if $bien}<p>Instructor ingresado con exito!</p> {/if}
-
-                        <label for="nombre"><b>Nombre:</b></label>
-                        <input type="text" placeholder="Ingrese nombre" name="nombre" required />
-
-                        <label for="apellido"><b>Apellido:</b></label>
-                        <input type="text" placeholder="Ingrese apellido" name="apellido" required />
-
-                        <label for="cedula"><b>Cedula:</b></label>
-                        <input type="number" placeholder="Ingrese cedula" name="cedula" required />
-
-                        <label for="fecha"><b>Fecha de nacimiento:</b></label>
-                        <input type="date" placeholder="Ingrese fecha" name="fecha1" name="fecha1" required />
-
-                        <label for="fecha"><b>Fecha de vencimiento de licencia:</b></label>
-                        <input type="date" placeholder="Ingrese fecha vencimiento" id="fecha2" name="fecha2" required />
-
-                        <button class="enviarDatos " type="submit">Dar de alta</button>
-                    </div>
-                </form>
-                <div class="botones">
-                    <a href="./aprobarCliente.php"><i class="fa fa-pencil"></i>
-                        <p class="nombre">Aprobar Cliente</p>
-                    </a>
-                    <a href="./actualizarLibreta.php"><i class="fa fa-pencil"></i>
-                        <p class="nombre">Confirmar Libreta</p>
-                    </a>
-                    <a href="./cargarInstructores.php"><i class="fa fa-pencil"></i>
-                        <p class="nombre">Listado de clases por instructor</p>
-                    </a>
                 </div>
-            </div>
 
 
-        {/if}
+            {else}
+                <div class="containerL">
+                <div class="ui message">
+                    <div class="header">
+                        Usted no tiene permisos para ingresar a esta seccion 
+                    </div>
+                    <p>Por favor dirijase al inicio o ingrese con un usuario que le permita dar acceso</p>
+                </div>
+                     </div>
+            {/if}
+       
         {include "footer.tpl"}
     </body>
 </html>

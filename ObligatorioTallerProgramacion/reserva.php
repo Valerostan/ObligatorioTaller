@@ -11,20 +11,45 @@ if ($conn->conectar()) {
     $parametros = array();
     if ($conn->consulta($sql, $parametros)) {
         $instructores = $conn->restantesRegistros(); //Le asigno a fila el resultado de la consulta
-        
+        $errorInstructores = false;
         if (count($instructores) == 0) {
-             $mensaje="No hay instructores";
+            $errorInstructores = true;
+        }
+
+
+        session_start();
+
+        $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+
+        $errorFecha = false;
+        if (isset($_GET["errFecha"])) {
+            $errorFecha = true;
+        }
+
+
+        $bien = false;
+        if (isset($_GET["bien"])) {
+            $bien = true;
+        }
+
+
+        $errConsulta = false;
+        if (isset($_GET["errConsulta"])) {
+            $errConsulta = true;
         }
         
-        echo $instructores;
-        
-        session_start();
-        
-        $_SESSION['url'] = $_SERVER['REQUEST_URI'];
-        
+       
+
         $smarty->assign("instructores", $instructores);
         $smarty->assign("acceso", $_SESSION['acceso']);
         $smarty->assign("esAdmin", $_SESSION['esAdmin']);
+        $smarty->assign("errorInstru", $errorInstructores);
+        $smarty->assign("errorFecha", $errorFecha);
+        $smarty->assign("bien", $bien);
+        $smarty->assign("errConsulta", $errConsulta);
+        $smarty->assign("esCliente", $_SESSION['esCliente']);
+
+
 
         $smarty->display('reserva.tpl');
     } else {
@@ -33,6 +58,5 @@ if ($conn->conectar()) {
 } else {
     echo "Error de Conexión " . $conn->ultimoError();
 }
-
 ?>
 

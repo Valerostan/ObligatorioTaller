@@ -13,44 +13,55 @@
     </head>
 
     <body>
-
-        {if $acceso and  $esAdmin}
-
-            {include "header.tpl"}
-
-            <form  class="contenido-registro" method="POST" action="listadoClases.php" id="frmLogin" >
-                <h2 class="ui center aligned icon header">
-                    <i class="circular user icon"></i>
-                    Vea lista de clientes por fechae instructor
-                </h2>
-
-                <div class="datos">
+        {include "header.tpl"}
+        
+            {if $acceso and  $esAdmin}
 
 
-                    <div class="labelInput">
-                        <label for="cedula"><b>Instructor:</b></label>
-                        <select class="ui fluid dropdown" name="instructor" id="instructor">
 
-                            {if !empty($instructores)}
-                                {foreach from=$instructores item=instructor}
-                                    <option value="{$instructor.instructor_id}"> {$instructor.nombre}</option>
+                <form  class="contenido-registro" method="POST" action="listadoClases.php" id="frmLogin" >
+                    <h2 class="ui center aligned icon header">
+                        <i class="circular user icon"></i>
+                        Vea lista de clientes por fechae instructor
+                    </h2>
 
-                                {/foreach}
-                            {/if}
-                        </select>            
+                    <div class="datos">
+
+
+                        <div class="labelInput">
+                            <label for="cedula"><b>Instructor:</b></label>
+                            <select  class="ui fluid dropdown" name="instructor" id="instructor">
+
+                                {if !empty($instructores)}
+                                    {foreach from=$instructores item=instructor}
+                                        <option value="{$instructor.instructor_id}"> {$instructor.nombre}</option>
+
+                                    {/foreach}
+                                {/if}
+                            </select>            
+                        </div>
+
+                        <div class="labelInput">
+                            <label for="fecha"><b>Fecha:</b></label>
+                            <input id="fecha" name="fecha" placeholder="Ingrese fecha" required/>
+                        </div>
+
+                        <button class="enviarDatos " type="submit">Realizar consulta</button>
                     </div>
+                </form>
 
-                    <div class="labelInput">
-                        <label for="fecha"><b>Fecha:</b></label>
-                        <input id="fecha" name="fecha" placeholder="Ingrese fecha" required/>
+
+            {else}
+                <div class="containerL">
+                <div class="ui message">
+                    <div class="header">
+                        Usted no tiene permisos para ingresar a esta seccion 
                     </div>
-
-                    <button class="enviarDatos " type="submit">Realizar consulta</button>
+                    <p>Por favor dirijase al inicio o ingrese con un usuario que le permita dar acceso</p>
                 </div>
-            </form>
-
-
-        {/if}
+                      </div>
+            {/if}
+      
 
         {include "footer.tpl"}
     </body>

@@ -13,6 +13,7 @@ $instructor = $_POST['instructor'];
 $user = $_SESSION['idActivo'];
 
 
+
 //Creo el objeto para la conexion
 $conn = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
@@ -51,16 +52,22 @@ if (($reservaExistente)) {
         if ($conn->consulta($sql1, $parametros2)) {
             $respuestaConsulta['estado'] = "OK";
             $respuestaConsulta['data'] = $conn->restantesRegistros();
+            header("Location: reserva.php?bien=1");
             
         } else {
             $respuestaConsulta['estado'] = "ERROR";
             $respuestaConsulta['error'] = "Error al ejecutar consulta"." ".$fecha." ".$hora." ".$instructor." ".$usuario_id;
+             header("Location: reserva.php?errConsulta=1");
         }
     } else {
         $respuestaConsulta['estado'] = "ERROR";
         $respuestaConsulta['error'] = "Error al ejecutar consulta1";
+             header("Location: reserva.php?errConsulta=1");
     }
+    
+}else{
+    header("Location: reserva.php?errFecha=1");
 }
-header("Location: reserva.php");
+
 ?>
            

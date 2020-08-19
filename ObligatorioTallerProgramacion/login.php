@@ -14,7 +14,8 @@ if (!isset($_SESSION["user"])) {
     $_SESSION["user"] = array(
         "mail" => "anónimo",
         "acceso" => false,
-        "esAdmin" => false
+        "esAdmin" => false,
+        "esCliente" => false
     );
 }
 $errorMail=false;
@@ -32,6 +33,8 @@ $smarty->assign("user", $_SESSION["user"]);
 $smarty->assign("usuario_mail", $user);
 $smarty->assign("errorMail", $errorMail);
 $smarty->assign("errorPassword", $errorPassword);
+$smarty->assign("esCliente", $_SESSION['esCliente']);
+
 
 
 $smarty->display("login.tpl");
