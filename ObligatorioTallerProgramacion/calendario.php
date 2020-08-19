@@ -1,5 +1,7 @@
 <?php
 
+$respuestaConsulta = array();
+
 session_start();
 
 require_once("configuracion.php");
@@ -10,32 +12,28 @@ $conn1 = new ConexionBD(MOTOR, SERVIDOR, BASEDATOS, USUARIOBASE, CLAVEBASE);
 
 
     if ($conn->conectar() && $conn1->conectar()) {
-        $sql = "SELECT id_reserva FROM reservas WHERE fecha=:fecha";
+        $sql = "SELECT COUNT( reserva_id) AS cantidad, fecha FROM reservas WHERE MONTH(curdate()) = MONTH(fecha)
+                GROUP BY (fecha)";
         $sql1 = "SELECT count(instructor_id) as cantInstructores FROM instructores";
         
         $parametros = array();
-        $parametros[0] = array("fecha", $fecha, "string");
         
         $parametros1 = array();
-        $parametros1[0] = array("fecha", $fecha, "string");
         
         if ($conn->consulta($sql, $parametros) && $conn1->consulta($sql1, $parametros1)) {
-            $respuestaConsulta['data'] = $conn->restantesRegistros(); 
-            $respuestaConsulta['estado'] = 'OK';
+            $respuestaConsulta["data"] = $conn->restantesRegistros(); 
+            $respuestaConsulta["estado"] = "OK";
+            $respuestaConsulta["data1"] = $conn1->restantesRegistros(); 
             
-            $respuestaConsulta1['data'] = $conn1->restantesRegistros(); 
-            $respuestaConsulta1['estado'] = 'OK';
-            
-            $smarty->assign("reservas", $respuestaConsulta);
-            $smarty->assign("cantInstructores", $respuestaConsulta1);
+            //$smarty->assign("reservas", $respuestaConsulta);
+            //$smarty->assign("cantInstructores", $respuestaConsulta1);
             
             
         } else {
-            $respuestaConsulta['estado'] = "ERROR";
-            $respuestaConsulta1['estado'] = "ERROR";
+            $respuestaConsulta["estado"] = "ERROR";
         }
     } else {
-        $respuestaConsulta['estado'] = "ERROR";
-        $respuestaConsulta1['estado'] = "ERROR";
+        $respuestaConsulta["estado"] = "ERROR";
     }
-
+    
+            echo json_encode($respuestaConsulta);

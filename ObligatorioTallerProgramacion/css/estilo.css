@@ -36,6 +36,63 @@ body{
     margin: 100px;
 }
 
+#my-calendar{
+    margin-left: 500px;
+    margin-top: 5px;
+}
+
+#calendarioYrefes{
+    display: in-line-block;
+    display: flex;
+    flex-direction: row;
+}
+
+#referencias{
+   background: #dfdce3;
+   border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+    -webkit-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 57px -9px rgba(0,0,0,0.75);
+    margin-top: 200px;
+    margin-right: 50px;
+    width: 25%;
+    height: 20%;
+    color: white;
+    float: right;
+    margin-top: 100px;
+    margin-left: 30px;
+    
+}
+
+.colorReferenciaR{
+    background-color: #FC4A1A;
+        width: 10px;
+    height: 10px;
+    
+}
+
+.colorReferenciaG{
+    background-color: #4ABDAC;
+        width: 10px;
+    height: 10px;
+}
+
+.colorReferenciaY{
+    background-color: #F7B733;
+        width: 10px;
+    height: 10px;
+}
+
+.referenciaB{
+    display:flex;
+    felx-direction:row;
+    display: flex;
+    justify-content: unset;
+    align-items: baseline;
+}
+
 .datosClases{
     background: #ddc1e6;
     border-radius: 42px 42px 42px 42px;
@@ -204,6 +261,10 @@ footer div.barraIconos{
     display:flex;
     flex-direction: row;
     flex-grow: 20;
+    margin-bottom: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 

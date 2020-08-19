@@ -15,7 +15,7 @@ define('CACHE_DIR', APP_PATH . 'tmp/cache/');
 //Defino parámetros de la conexión
 define("MOTOR","mysql");
 define("SERVIDOR","localhost");
-define("BASEDATOS","obligatorio");
+define("BASEDATOS","obligatoriooo");
 define("USUARIOBASE","root");
 define("CLAVEBASE","root");
 

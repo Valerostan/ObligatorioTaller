@@ -1,44 +1,80 @@
-//$(document).ready(paintCalendar);
-//
-//function paintCalendar() {
-//    var element = document.getElementById("my-calendar");
-//     jsCalendar.new(element);
-//    $("td").css("background-color", "yellow");
-//    
-//    //$(this).css("background-color", "#ECF8E0");
-//    
-//    $.ajax({
-//        url: "calendario.php",
-//        data: {accion: "buscar"},
-//        dataType: "json"
-//    }).done(function (data) {
-//        
-//        if (data['estado'] === 'ok'){
-//            $resp = data['data'];
-//        $(".auto-jsCalendar jsCalendar").each(function (index) {
-//         $(this).children("td").each(function (index2) {
-//         if ($resp.contains(index2.html())){
-//
-//         }
-//         
-//         $(this).css("background-color", "#ECF8E0");
-//         if (data['data'] === 15){
-//         //$("td").css("background-color", "red");
-//         }
-//         else if (data['data'] < 15 && data['data'] >= 7){
-//         //$("td").css("background-color", "yellow");
-//         }
-//         else{
-//         //$("td").css("background-color", "green");
-//         }
-//         }
-//         
-//         
-//         //console.log($("td").innerHTML);
-//    }).fail(function (data, err) {
-//        console.log(data);
-//        console.log(err);
-//    })
-//   
-//         
-//}
+$(document).ready(paintCalendar);
+
+function paintCalendar() {
+    var element = document.getElementById("my-calendar");
+    jsCalendar.new(element);
+
+    $.ajax({
+        url: "calendario.php",
+        data: {accion: "buscar"},
+        dataType: "json"
+    }).done(function (data) {
+        if (data.estado === 'OK') {
+            console.log('hola');
+            //console.log(date.getMonth());
+            var reservas = data.data;
+            var instructores = data.data1;
+            var cantInstructores = parseInt(instructores[0][0]);
+            recorrer(reservas, cantInstructores);
+            $("td.jsCalendar-previous").each(function () {
+                $(this).css("background-color", "#ccc");
+                $(this).css("color", "black");
+            })
+            $("td.jsCalendar-next").each(function () {
+                $(this).css("background-color", "#ccc");
+                $(this).css("color", "black");
+            })
+        }
+    })
+            /*$(".auto-jsCalendar jsCalendar").each(function (index) {
+             $(this).children("td").each(function (index2) {
+             console.log(idex2.html());
+             if (data.data.contains(index2.html()) && data.data2=== data.data2*data.data1) {
+             $("td").css("background-color", "red");
+             } else if (data.data.contains(index2.html()) && (($resp.count*100/data.data1*15)>= 50)) {
+             $("td").css("background-color", "yellow");
+             } else {
+             $("td").css("background-color", "green");
+             }
+             
+             })
+             
+             })
+             }
+             
+             }
+             )*/.fail(function (data, err) {
+                console.log(data);
+                console.log(err);
+            });
+
+}
+
+function recorrer(reservas, cantInstructores) {
+    $("td").css("background-color", "#4ABDAC");
+    for (var i = 0; i < reservas.length; i++) {
+        var reserva = reservas[i];
+        var fecha = reserva[1];
+        var dia = parseInt(fecha.split('-')[2]);
+        var mes = fecha.split('-')[1];
+        var mesPluginPalabra = $('.jsCalendar-title-name').text();
+        var mesPluginNro = getMonthFromString(mesPluginPalabra);
+        var mesPluginTxt = mesPluginNro + "";
+        var cantReservasPorDia = parseInt(reserva[0]);
+        $("td").each(function () {
+            if (!($(this).css("className") == "jsCalendar-previous")) {
+                if (dia == parseInt($(this).text()) && (cantInstructores * 15 == cantReservasPorDia)) {
+                    $(this).css("background-color", "#FC4A1A");
+                } else if (dia == parseInt($(this).text()) && ((cantReservasPorDia) / (cantInstructores * 15)) >= 0.50) {
+                    $(this).css("background-color", "#F7B733");
+                }
+            }
+
+        })
+
+    }
+}
+
+function getMonthFromString(mon) {
+    return new Date(Date.parse(mon + " 1, 2012")).getMonth() + 1
+}
